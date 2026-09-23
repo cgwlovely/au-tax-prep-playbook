@@ -1,69 +1,71 @@
-# 交接清单
+# Handover checklist
 
-## 接手人先读
+*English · [中文](zh/handover.md)*
 
-1. `README.md`：安全边界和总体流程。
-2. `docs/annual-workflow.md`：年度执行顺序。
-3. `docs/income-and-cashflow-reconciliation.md`：工资、转账和家庭收支口径。
-4. `docs/rental-reconciliation.md`：出租房对账规则。
-5. 当前财年的本地 summary、逐笔复核和缺件清单。
+## Read these first
 
-## 每个结论必须说明
+1. `../README.md` — the privacy boundary and the overall process.
+2. `annual-workflow.md` — the order of work for the year.
+3. `income-and-cashflow-reconciliation.md` — salary, transfers and household definitions.
+4. `rental-reconciliation.md` — the rental reconciliation rules.
+5. The current year's local summary, transaction review and missing-items list.
 
-- 来源文件或邮件；
-- 交易日期和金额；
-- 付款人及受益项目；
-- 为什么可扣、条件性或排除；
-- 是否已包含在中介净转账中；
-- 共同持有分配比例；
-- 尚缺什么证据。
+## Every conclusion must state
 
-## 交付前检查
+- the source file or email;
+- the transaction date and amount;
+- who paid, and what it benefited;
+- why it is deductible, conditional or excluded;
+- whether it is already inside the agent's net transfer;
+- the joint-ownership apportionment;
+- what evidence is still missing.
 
-- [ ] 财年日期正确。
-- [ ] 所有银行账户均已覆盖。
-- [ ] 每份 PDF 内的全部子账户均已解析。
-- [ ] 内部转账、退款、投资入金和信用卡还款未当作消费或收入。
-- [ ] 每个雇主的银行净工资已与 ATO gross/PAYG 分别核对。
-- [ ] 中介年度 summary 与银行净入账已对平。
-- [ ] 中介 statement 编号和日期连续，未解释差额已列出。
-- [ ] 中介代付费用没有重复申报。
-- [ ] 自住房和出租房账单已按地址区分。
-- [ ] 贷款只扣利息及合资格借款费用，不扣本金。
-- [ ] 设备使用比例和折旧表已更新。
-- [ ] 上一年结转项目已复核。
-- [ ] 工资、PAYG、银行利息和投资分配已取得。
-- [ ] Medicare、私人健康保险和 HELP/HECS 已核对。
-- [ ] 条件性项目未混入确认总额。
-- [ ] 仓库提交内容不含个人或财务原件。
-- [ ] 记账日与真实交易日的差异已识别；星期与行程天数的结论未建立在记账日之上。
-- [ ] 海外交易的批次压缩已检查；行程天数未用记账跨度推算。
-- [ ] 两处房产的市政费、水费、保险、维修已按客户号或中介代付交叉排除完成归属。
-- [ ] 自住房水费未被计入居家办公；居家办公金额非直接沿用上一年。
-- [ ] 居家办公两种方法已按实际在家天数试算比较，非默认沿用。
-- [ ] 设备折旧的起算日按首次使用日，非购买日。
-- [ ] 工作使用占比有四周记录或等效自动日志支撑；已说明该证据的边界。
-- [ ] 中介 summary 中的合并行已调原始发票逐笔拆分（维修／折旧资产／资本工程）。
-- [ ] 折旧资格已先筛建成年份，再决定是否委托 quantity surveyor。
-- [ ] 已评估确认无空间的项目已单列「已评估并关闭」，写明依据与重开条件。
-- [ ] 提交前已复核仓库为 private，并扫描姓名、地址、账号和真实金额。
+## Before handing over
 
-## 建议交接格式
+- [ ] The financial year dates are correct.
+- [ ] Every bank account is covered.
+- [ ] Every sub-account inside every PDF has been parsed.
+- [ ] Internal transfers, refunds, investment funding and credit card repayments are not counted as spending or income.
+- [ ] Net salary per employer has been reconciled against ATO gross and PAYG separately.
+- [ ] The agent's annual summary reconciles to the net bank receipts.
+- [ ] Agent statement numbers and dates are continuous; any unexplained difference is listed.
+- [ ] Expenses the agent paid are not claimed twice.
+- [ ] Home and rental bills are separated by address.
+- [ ] Only interest and eligible borrowing expenses are claimed on the loan — not principal.
+- [ ] Equipment work-use percentages and the depreciation schedule are updated.
+- [ ] Items carried forward from last year have been reviewed.
+- [ ] Salary, PAYG, bank interest and investment distributions have been obtained.
+- [ ] Medicare, private health insurance and HELP/HECS have been checked.
+- [ ] Conditional items are not mixed into the confirmed total.
+- [ ] Nothing committed to the repository contains personal or financial originals.
+- [ ] The gap between posting date and real transaction date has been identified; no conclusion about weekdays or trip length rests on posting dates.
+- [ ] Batching of overseas transactions has been checked; trip length is not derived from the posting span.
+- [ ] Rates, water, insurance and repairs across both properties have been attributed by customer reference or by cross-eliminating agent-paid items.
+- [ ] Home water is not included in the home-office claim, and the home-office figure is not simply carried forward from last year.
+- [ ] Both home-office methods have been calculated against the actual days at home and compared, rather than defaulting.
+- [ ] Depreciation starts from the first-use date, not the purchase date.
+- [ ] The work-use percentage is supported by a four-week record or an equivalent automatic log, and the limits of that evidence are stated.
+- [ ] Combined lines in the agent's summary have been split against the original invoices (repairs / depreciating assets / capital works).
+- [ ] Depreciation eligibility was screened by construction year before any quantity surveyor was engaged.
+- [ ] Items assessed and found to have no room are listed separately as **assessed and closed**, with the basis and the conditions for reopening.
+- [ ] The repository has been re-checked for personal data — names, addresses, account numbers and real amounts — before pushing.
+
+## Suggested handover format
 
 ```text
-已确认金额：
-高可信候选：
-排除金额及原因：
-仍缺材料：
-关键假设：
-需要税务代理判断的问题：
+Confirmed:
+High-confidence candidates:
+Excluded, and why:
+Still missing:
+Key assumptions:
+Questions for the tax agent:
 ```
 
-## 本地材料交接
+## Handing over the local material
 
-交接说明只引用本地相对路径和匿名账户别名，不复制敏感数据到本仓库。接手人应能从以下四张控制表继续工作：
+The handover note references local relative paths and anonymised account aliases only; sensitive data is never copied into this repository. Whoever picks it up should be able to continue from four control sheets:
 
-1. 资料来源与覆盖期间；
-2. 银行账户余额和逐笔分类；
-3. 出租房 statement 连续性及年度桥接；
-4. 缺件、未解释差额和需税务代理判断事项。
+1. Sources and the periods they cover.
+2. Account balances and the line-by-line classification.
+3. Agent statement continuity and the annual bridge.
+4. Missing items, unexplained differences, and questions for the tax agent.

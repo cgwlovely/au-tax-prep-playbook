@@ -1,78 +1,80 @@
-# 银行流水的三个陷阱
+# Three traps in bank data
 
-银行导出的流水看起来是原始数据，实际已经过三层加工。不识别这三层，得出的结论会系统性偏离事实。
+*English · [中文](zh/bank-data-pitfalls.md)*
 
-## 陷阱一：记账日不是消费日
+An exported bank file looks like raw data. It has in fact been through three layers of processing, and conclusions drawn without recognising them are wrong in systematic, predictable ways.
 
-导出文件里的日期是**记账日（posting date）**，不是刷卡当日。
+## Trap 1: the posting date is not the spending date
 
-### 如何量化滞后
+The date in an export is the **posting date**, not the date the card was used.
 
-部分银行的交易摘要里嵌有真实交易时间，形如 `Date 17 Mar 2023` 或 `In <地点> Date <日期>`。用这些记录可以直接测出该行的滞后分布：
+### Measuring the lag
+
+Some banks embed the real transaction time inside the description, in forms like `Date 17 Mar 2023` or `In <location> Date <date>`. Where they do, the lag for that account can be measured directly:
 
 ```text
-滞后天数 = 记账日 - 摘要内的真实交易日
+lag in days = posting date - real date from the description
 ```
 
-经验值：带真实日戳的账户滞后通常 1–3 天；不带日戳的账户需要用其他方式间接验证（见下）。
+In practice, accounts that carry a real date stamp lag 1–3 days. Accounts without one have to be validated indirectly (below).
 
-### 哪些结论会被污染
+### Which conclusions get contaminated
 
-| 结论 | 是否受影响 |
+| Conclusion | Affected? |
 | --- | --- |
-| 月度与财年金额 | 基本不受影响，滞后一般不跨月 |
-| 跨财年归属 | 6 月底的交易可能记到 7 月，须单独排查 |
-| **星期分布** | **严重失真** |
-| **行程天数** | **严重失真**（见陷阱二） |
+| Monthly and financial-year totals | Largely safe — the lag rarely crosses a month |
+| Which financial year a transaction falls in | Late-June transactions can post in July; check these separately |
+| **Day-of-week distribution** | **Badly distorted** |
+| **Trip duration** | **Badly distorted** (see trap 2) |
 
-星期分布之所以失真，是因为周末交易被批量记到下一个工作日。判别方法很简单：统计各星期的交易笔数，若周一畸高而周末畸低，该账户的记账日不可用于行为分析。
+Day-of-week breaks because weekend transactions are batched onto the next business day. The test is simple: count transactions by weekday. If Monday is inflated and the weekend is depressed, that account's dates cannot be used for behavioural analysis.
 
-### 可替代的真实日期来源
+### Alternative sources of the real date
 
-- 摘要内嵌的交易日戳；
-- 商户小票（如超市电子小票导出）；
-- 公共交通刷卡记录；
-- 设备或应用的会话日志。
+- Date stamps embedded in the description.
+- Merchant receipts, such as exported supermarket e-receipts.
+- Public transport card travel history.
+- Device or application session logs.
 
-用这些交叉验证时，应报告样本量，不要把小样本的结论套用到全量。
+When cross-validating this way, report the sample size. Do not extend a conclusion from a small sample to the whole dataset.
 
-## 陷阱二：海外交易按批次入账
+## Trap 2: overseas transactions post in batches
 
-海外消费的记账压缩比国内严重得多。同一批次可能把连续多日、多个城市的交易压在一个记账日。
+Compression is far worse abroad than at home. One batch can collapse several days across several cities onto a single posting date.
 
-判别方法：
+The test:
 
 ```text
-压缩比 = 该行程的交易笔数 ÷ 出现的记账日数
+compression ratio = transactions on the trip ÷ distinct posting dates
 ```
 
-压缩比越高，用记账跨度推算行程天数越不可靠。遇到压缩比高的行程，天数应改用：
+The higher the ratio, the less reliable the posting span is as a measure of trip length. Where the ratio is high, take the duration from:
 
-- 带真实日戳的账户记录；
-- 机票、住宿、保险的起止日；
-- 当事人确认。
+- accounts that carry a real date stamp;
+- the start and end dates on flights, accommodation and travel insurance;
+- the traveller.
 
-**不要用记账日的首尾之差当作行程天数。** 这个错误会把天数放大数倍，进而把「日均消费」算成无意义的数字。
+**Never use the span between the first and last posting date as the trip length.** This error inflates duration several-fold, which in turn turns any "average per day" figure into nonsense.
 
-## 陷阱三：商户名不代表归属
+## Trap 3: the merchant name does not establish attribution
 
-同一商户名可能对应不同房产、不同用途、甚至不同人。
+The same merchant name can cover different properties, different purposes, even different people.
 
-常见误判：
+Common misreadings:
 
-- 市政费、水费：两处房产的账单商户名完全相同；
-- 保险：同一保险公司下的房东险、家财险、车险共用商户名；
-- 加油站、便利店：可能是加油，也可能是 ATM 取现或买零食；
-- 支付网关（PayPal、Square 等）：商户名是网关名或其注册城市，不是实际店家所在地。
+- **Council rates and water** — bills for two properties carry an identical merchant name.
+- **Insurance** — landlord, home contents and motor policies from one insurer share a merchant name.
+- **Service stations and convenience stores** — could be fuel, an ATM withdrawal, or snacks.
+- **Payment gateways** (PayPal, Square and similar) — the merchant name is the gateway or its registered city, not where the shop actually is.
 
-归属判定的方法见 [费用归属判定](expense-attribution.md)。
+For how to resolve attribution, see [Expense attribution](expense-attribution.md).
 
-## 正则匹配的常见事故
+## How keyword rules go wrong
 
-用关键词批量分类时，以下几类错误反复出现：
+When classifying in bulk with keyword matching, the same few failures recur:
 
-- **标点未规范化**：`JB HI-FI` 匹配不上 `JB HI ?FI`，`7-ELEVEN` 匹配不上 `7 ELEVEN`，`IG.COM` 匹配不上 `IG COM`。分类前先把非字母数字统一替换为空格。
-- **子串误命中**：`MOBIL`（加油站）会命中 `MOBILE BANKING`；`PASSPORT` 会命中 `FITNESS PASSPORT`；`LEMON`（洗碗块口味）会命中水果类规则。加词边界或调整规则顺序。
-- **规则顺序错误**：调味类酸奶（草莓味）会先被水果规则捕获。把更具体的类别放在更宽泛的类别之前。
+- **Unnormalised punctuation.** `JB HI-FI` will not match `JB HI FI`; `7-ELEVEN` will not match `7 ELEVEN`; `IG.COM` will not match `IG COM`. Replace every non-alphanumeric character with a space before matching.
+- **Substring collisions.** `MOBIL` (the service station) matches `MOBILE BANKING`. `PASSPORT` matches `FITNESS PASSPORT`. `LEMON` (a dishwasher tablet scent) matches a fruit rule. Add word boundaries, or reorder the rules.
+- **Rule order.** Flavoured yoghurt is captured by the fruit rule before it reaches the dairy rule. Put specific categories ahead of broad ones.
 
-每次调整分类规则后，都应输出未归类的尾部明细人工抽查，直到残差可解释为止。
+After every change to the rules, print the unclassified tail and check it by hand, until the residue is explainable.

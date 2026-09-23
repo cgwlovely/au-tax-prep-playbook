@@ -1,48 +1,50 @@
-# YYYY–YY 退税估算与缺件清单
+# YYYY–YY estimate and open items
 
-## 基本信息
+*English · [中文](zh/annual-summary-template.md)*
 
-- 财年：
-- 纳税人：
-- 出租房持有比例：
-- 工作方式及 WFH 方法：
-- 本年重要变化：
+## Basics
 
-## 当前结果
+- Financial year:
+- Taxpayers:
+- Rental ownership percentage:
+- Work arrangement and home-office method:
+- Significant changes this year:
 
-| 人员 | 已确认扣除 | 条件性扣除 | 备注 |
+## Current position
+
+| Person | Confirmed deductions | Conditional deductions | Notes |
 | --- | ---: | ---: | --- |
 | Person A |  |  |  |
 | Person B |  |  |  |
 
-## 出租房
+## Rental property
 
-| 项目 | 合计 | Person A | Person B | 证据/状态 |
+| Item | Total | Person A | Person B | Evidence / status |
 | --- | ---: | ---: | ---: | --- |
-| Gross rent 或净现金收入 |  |  |  |  |
-| 利息 |  |  |  |  |
-| 保险 |  |  |  |  |
-| 中介费用 |  |  |  |  |
+| Gross rent (or net cash income) |  |  |  |  |
+| Interest |  |  |  |  |
+| Insurance |  |  |  |  |
+| Agent fees |  |  |  |  |
 | Body corporate |  |  |  |  |
 | Council / water |  |  |  |  |
 | Repairs |  |  |  |  |
 
-## 工作和学习费用
+## Work and education expenses
 
-| 项目 | 人员 | 金额 | 状态 | 所缺材料 |
+| Item | Person | Amount | Status | Evidence outstanding |
 | --- | --- | ---: | --- | --- |
 
-## 跨年项目
+## Cross-year items
 
-| 项目 | 本年金额 | 剩余价值/年限 | 来源 |
+| Item | This year | Remaining value / years | Source |
 | --- | ---: | ---: | --- |
 
-## 缺件
+## Missing
 
 1. 
 
-## 假设与风险
+## Assumptions and risks
 
 - 
 
-> 本文件用于资料整理和估算，不替代注册税务代理意见。
+> This file supports preparation and estimation. It does not replace advice from a registered tax agent.

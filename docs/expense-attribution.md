@@ -1,86 +1,88 @@
-# 费用归属判定：两处房产如何分开
+# Expense attribution: separating two properties
 
-同时持有自住房和出租房时，市政费、水费、保险、电工等账单在银行流水里往往商户名相同、金额接近。归属判错会双向出错：把自住房支出算进出租房是多扣，把出租房支出漏掉是少扣。
+*English · [中文](zh/expense-attribution.md)*
 
-以下五种方法可交叉验证，单独任何一种都不足以定案。
+When you hold a home and a rental property at the same time, the council rates, water, insurance and trades bills arrive under the same merchant names for similar amounts. Getting attribution wrong fails in both directions: charging a home expense to the rental over-deducts, and missing a rental expense under-deducts.
 
-## 方法一：季度计数法
+The five methods below cross-check each other. None of them is sufficient on its own.
 
-按季度计费的项目（市政费、水费），**一处房产一年应有且仅有四期**。
+## Method 1: count the quarters
 
-```text
-某财年某项目的付款笔数 ÷ 4 ≈ 该项目涉及的房产数
-```
-
-若一年出现六笔市政费，说明涉及两处房产且其中一处只付了两期 —— 另两期很可能由中介代付。若出现八笔，则两处房产各四期。
-
-按金额聚类可进一步分流：同一处房产的连续季度金额通常接近且平滑上升，不同房产之间有可辨识的价差。
-
-## 方法二：中介代付交叉排除
-
-中介年度 summary 的 Money Out 列出了中介代付的每一项。
+For anything billed quarterly — council rates, water — **one property should produce exactly four instalments a year**.
 
 ```text
-出租房该项全年应付 = 中介代付部分 + 业主自付部分
+payments for an item in a financial year ÷ 4 ≈ number of properties involved
 ```
 
-用这条恒等式反推业主自付的份数：若中介代付了两期市政费，则业主自付的市政费中应只有两期属出租房，其余属自住房。
+Six council rates payments in a year means two properties, with one of them showing only two instalments — the other two were almost certainly paid by the agent. Eight means four instalments each.
 
-**这条方法最有力**，因为中介 summary 是第三方文件且逐项列明。
+Clustering by amount separates them further: consecutive quarters for one property are close in value and rise smoothly, while two different properties usually differ by a recognisable margin.
 
-## 方法三：保险分流法
+## Method 2: cross-eliminate what the agent paid
 
-同一保险公司下的多张保单在流水里商户名相同，但可通过三项特征分流：
+The Money Out column of the agent's annual summary itemises everything the agent paid on your behalf.
 
-| 特征 | 用法 |
+```text
+total payable on the rental = paid by agent + paid directly by owner
+```
+
+Use that identity backwards. If the agent paid two quarters of council rates, then only two of the owner-paid instalments belong to the rental; the rest belong to the home.
+
+**This is the strongest method**, because the agent's summary is a third-party document and is itemised.
+
+## Method 3: separating insurance policies
+
+Several policies with one insurer share a merchant name in the bank data, but three features tell them apart:
+
+| Feature | How to use it |
 | --- | --- |
-| **保单参考号前缀** | 同一保单的扣款共用固定前缀，不同保单前缀不同 |
-| **起始日期** | 房东险自出租之日起；家财险自购房之日起；车险自投保之日起 |
-| **月扣金额量级** | 公寓/联排房东险通常远低于独栋家财险；车险介于两者之间 |
+| **Policy reference prefix** | Debits for one policy share a fixed prefix; different policies have different prefixes |
+| **Start date** | Landlord cover starts when the property is first let; home contents when the home was bought; motor when the vehicle was insured |
+| **Monthly amount** | Landlord cover on a unit or townhouse is usually well below contents cover on a house; motor sits between them |
 
-三项一致才能定案。**起始日期最有说服力** —— 房东险的首期扣款日若与出租起始日吻合，基本可以确认。
+Only treat it as settled when all three agree. **The start date carries the most weight** — a first landlord premium falling on the date the tenancy began is close to conclusive.
 
-保单中断与接续也要追踪：某保险在某月停止、另一家在次月以相近金额接续，通常是同一标的换了承保人，不是两张不同的保单。
+Track breaks and continuations too. One insurer stopping in a given month and another starting the next at a similar amount is usually the same risk with a new underwriter, not two separate policies.
 
-## 方法四：账单客户号核对
+## Method 4: check the customer reference on the bill
 
-水费、市政费的纸质或电子账单上都有客户参考号与房产地址。
-
-```text
-把每处房产的客户号登记一次，此后所有付款按客户号归属
-```
-
-这是最确定的方法，但需要调取账单原件。建议在首次归属判定时做一次，登记进控制表，往后只需核对新增。
-
-## 方法五：付款模式一致性
-
-在一个完整财年内，同一处房产的各项持有成本应当**同时出现**。
+Water and council rates notices, paper or electronic, carry a customer reference number and the property address.
 
 ```text
-若某财年业主自付了四期市政费和四期水费，这两组极可能属同一处房产
+register each property's customer reference once, then attribute every payment by reference
 ```
 
-反之，若市政费有四期而水费只有两期，说明其中一项另有两期由他人（中介）支付。
+This is the most certain method, but it needs the original notices. Do it once when first establishing attribution, record the references in a control sheet, and afterwards only check new ones.
 
-## 判定流程
+## Method 5: consistency of payment patterns
+
+Across a full financial year, the holding costs for one property should **appear together**.
 
 ```text
-1. 统计各项目的年度付款笔数 → 方法一，初步判断涉及几处房产
-2. 调取中介年度 summary → 方法二，扣除中介代付的份数
-3. 核对账单客户号 → 方法四，对能取到原件的项目直接定案
-4. 保险按前缀 + 起始日 + 金额量级分流 → 方法三
-5. 检查同一房产各项目的期数是否一致 → 方法五，查漏
-6. 仍不确定的，列入缺件清单，注明需要哪份原件才能定案
+if the owner paid four quarters of rates and four of water, those two sets very likely belong to the same property
 ```
 
-## 判错的两个方向
+Conversely, four rates but only two water instalments means the other two water quarters were paid by someone else — the agent.
 
-**多扣**：把自住房的市政费、水费、电工费、家财险算进出租房。这类错误金额通常不小，且在被查时难以解释。
+## The determination sequence
 
-**少扣**：把出租房的支出误认为自住房而不申报。较少见，但同样是损失。
+```text
+1. Count annual payments per item      → method 1, how many properties are involved
+2. Pull the agent's annual summary     → method 2, subtract what the agent paid
+3. Check customer references           → method 4, settle whatever you have originals for
+4. Split insurance by prefix + start date + amount → method 3
+5. Check instalment counts agree across items for one property → method 5, find gaps
+6. Anything still open goes on the missing-items list, naming the document needed to settle it
+```
 
-## 一个特别提醒：水费不属居家办公费用
+## The two ways it goes wrong
 
-自住房的水费既不能作为出租房支出，也**不属于 ATO 认可的居家办公运行费用**。居家办公可扣的运行费用限于电费、燃气、宽带、电话、文具与耗材。
+**Over-deducting** — charging the home's rates, water, electrical work or contents insurance to the rental. These amounts are usually not small and are hard to explain under review.
 
-水费被误计入居家办公，是本方法库记录到的典型错误之一 —— 一旦发生，还会因为「沿用上一年」而逐年重复。
+**Under-deducting** — treating a rental expense as a home expense and not claiming it. Less common, but still a loss.
+
+## One specific warning: water is not a home-office expense
+
+Water at your home is neither a rental expense **nor** an ATO-recognised working-from-home running expense. The running expenses covered are electricity, gas, internet, phone, stationery and consumables.
+
+Water misclassified as a home-office cost is one of the recorded failures behind this playbook — and once it happens it repeats every year, because the next year's figure gets carried forward from the last.
