@@ -23,7 +23,7 @@
 6. 将每项费用标成“已确认、条件性、排除、缺凭证”。
 7. 生成估算和缺件清单，再交给注册税务代理或用于 myTax 复核。
 
-详细步骤见 [年度流程](docs/annual-workflow.md)、[出租房对账](docs/rental-reconciliation.md) 和 [交接清单](docs/handover.md)。
+详细步骤见 [年度流程](docs/annual-workflow.md)、[收入与家庭现金流](docs/income-and-cashflow-reconciliation.md)、[出租房对账](docs/rental-reconciliation.md) 和 [交接清单](docs/handover.md)。
 
 ## 目录
 

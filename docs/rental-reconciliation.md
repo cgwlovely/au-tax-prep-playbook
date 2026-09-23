@@ -23,6 +23,8 @@
 
 连续 statement 的余额应能衔接。`Payment withheld` 通常只是中介保留租金等待支付账单，不是业主向中介付款。
 
+建立 statement 控制表，记录每期编号、覆盖日期、期初余额、Money In、Money Out、You Received 和期末余额。缺号、日期断档或余额不衔接时，不应把年度结果标为已对平。
+
 ### 2. 银行流水
 
 将 `You Received` 与中介转账逐笔匹配。另查：
@@ -53,6 +55,36 @@ gross rent and other rental income
 
 把结果与净现金法比较，差额通常来自年末暂扣余额、bond/refund、业主直接付款或缺失 statement。
 
+先验证年度 summary 自身的恒等式：
+
+```text
+Money In - Money Out = annual net movement
+```
+
+再建立桥接表：
+
+```text
+annual net movement
++ opening agent balance
+- closing agent balance
++/- bond, refund and owner contribution adjustments
+= transfers received in owner bank account
+```
+
+保留未解释差额，并设置明确容差。不能为了对平而把差额塞入“其他费用”。
+
+## 多年度比较
+
+水费、市政费和物业费应按账单覆盖期间比较，而不是只按银行付款月份比较。推荐每项同时记录：
+
+- 账单期起止日和付款日；
+- 中介代付或业主直付；
+- 总额、可扣部分和资本部分；
+- 与上一年、前一年的同比变化；
+- 缺失季度或重复账单。
+
+若上一财年提前支付下一期间的 levy、保险或其他费用，应单独列为跨期项目，交由税务代理确认可扣年度。
+
 ## Body corporate
 
 - 普通 administration fund 和 general-purpose sinking fund contribution 通常可立即扣除。
@@ -72,3 +104,13 @@ gross rent and other rental income
 - 把贷款本金和利息一起扣除；
 - 把 special capital levy 当作普通季度 levy；
 - 只看银行商户名，不核对地址或客户号。
+- 年度中介净额已经包含水费等代付项目，却又把发票合计加到费用中；
+- 直接沿用往年工作簿的汇总值，没有独立重算明细、净额和持有比例。
+
+## 独立复核公式
+
+工作簿至少应有三项自动检查：
+
+1. 明细收入减明细费用等于出租房净额；
+2. 共同持有人的分配额合计等于房产总额；
+3. 中介费用、业主直付费用和银行净收款之间不存在重复计入。
