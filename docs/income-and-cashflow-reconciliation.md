@@ -1,12 +1,14 @@
-# 收入与家庭现金流对账
+# Income and household cash flow reconciliation
 
-本流程同时支持报税资料核对和家庭资金去向分析，但两者必须使用不同口径。报税按税务性质分类，家庭现金流按真实流入、真实消费、资产转移和内部转账分类。
+*English · [中文](zh/income-and-cashflow-reconciliation.md)*
 
-## 数据覆盖
+This process serves both tax substantiation and household cash-flow analysis, but the two use different definitions and must be kept apart. Tax classifies by tax character; household cash flow classifies by real inflow, real consumption, asset transfer and internal transfer.
 
-建立账户清单，逐一记录账户持有人别名、机构、账户类型、覆盖日期、期初和期末余额。银行 PDF 内含多个子账户时，每个子账户单独登记。缺少一个账户或一个月份时，汇总结论标为不完整。
+## Coverage
 
-## 标准字段
+Build an account inventory recording, for each: holder alias, institution, account type, dates covered, opening balance and closing balance. Where a bank PDF contains several sub-accounts, register each one separately. If an account or a month is missing, mark the summary conclusions incomplete.
+
+## Standard fields
 
 ```text
 date | owner | source | account | description | merchant
@@ -14,90 +16,89 @@ amount | flow_type | category | subcategory | tax_status
 evidence | counterparty | transfer_match | notes
 ```
 
-`flow_type` 至少包含：
+`flow_type` should cover at least:
 
-- `income`：工资、租金、利息等外部流入；
-- `expense`：商品或服务的最终消费；
-- `internal-transfer`：本人账户或家庭共同账户间转账；
-- `investment-or-debt`：证券入金、贷款本金、储蓄资产转移；
-- `refund-or-reversal`：商户退款或冲正；
-- `unresolved`：尚不能确定性质的交易。
+- `income` — salary, rent, interest and other external inflows;
+- `expense` — final consumption of goods or services;
+- `internal-transfer` — between your own or the household's accounts;
+- `investment-or-debt` — securities funding, loan principal, movements into savings;
+- `refund-or-reversal` — merchant refunds and reversals;
+- `unresolved` — character not yet determined.
 
-## 工资收入
+## Salary income
 
-1. 从银行流水识别所有周期性工资入账，并按雇主规范化名称。
-2. 检查漏月、一次性奖金、离职付款和第二雇主。
-3. 使用 ATO Income Statement 确认每个雇主的 gross income 和 PAYG withholding。
-4. 银行收到的净工资只用于现金流和完整性检查，不直接作为申报收入。
+1. Identify every recurring salary credit and normalise the employer name.
+2. Check for missing months, one-off bonuses, termination payments and a second employer.
+3. Confirm gross income and PAYG withheld per employer from the ATO income statement.
+4. Net salary received is for cash-flow and completeness checking only. It is not the income figure to lodge.
 
-## 由税后到账反推税前
+## Deriving gross income from net pay
 
-在 ATO Income Statement 尚未取得时，不必假设税率 —— 银行到账的是税后净额，用当年税率表反解即可得出税前收入与边际税率。
-
-```text
-求 G，使得  G - 所得税(G) - Medicare(G) = 全年净到账
-```
-
-所得税按当年分档累进计算，Medicare 按税前收入的固定比例。用二分法在合理区间内求解即可。
-
-### 前提
-
-- 已申报免税门槛；
-- 无 HELP/HECS 债务；
-- 无工资牺牲（如额外税前养老金）；
-- 无其他税前扣缴项。
-
-### 前提不成立时的偏向
-
-若实际预扣**高于**标准年度税额（有 HELP 债务、第二雇主未申报免税门槛），则同样的净到账对应的税前收入会**更高**，边际税率可能还要上一档。因此在多雇主情形下，反推值是**保守估计**。
-
-反过来，若有工资牺牲，税前总包会高于反推出的应税收入。
-
-### 用工资单验证
-
-拿到任一期工资单即可校验反推结果：
+Before the ATO income statement is available, there is no need to assume a tax rate. The bank receives the net amount, and the year's rate scale can be solved backwards to give both gross income and the marginal rate.
 
 ```text
-年基本工资 = 月基本工资 × 12
-减：无薪假（小时数 × 时薪）
-= 推算税前
+find G such that:  G - income tax(G) - Medicare(G) = total net received for the year
 ```
 
-与反推值对比，差异应在百分之一以内。工资单同时能直接证实两项前提：税率代码（是否已申报免税门槛）与有无学贷扣缴行。
+Income tax is the progressive scale for that year; Medicare is a fixed proportion of gross. Bisection over a plausible range solves it.
 
-### 顺带得出的两个结论
+### Assumptions
 
-**多预扣本就应退**。全年预扣（税前减到账）超出年度应纳税额的部分，与任何扣除无关，本来就该退。把这部分与扣除带来的减税分开列示，避免把两者混为一谈。
+- The tax-free threshold has been claimed;
+- no HELP/HECS debt;
+- no salary sacrifice (additional pre-tax super, for example);
+- no other pre-tax withholding.
 
-**扣除的实际价值按各自边际税率计算**。夫妻税率不同时，同样金额的扣除价值差异可达三成以上。若扣除跨越税率分档，实际边际税率介于两档之间：
+### Which way the error runs when they do not hold
+
+If actual withholding is **higher** than the standard annual liability — a HELP debt, or a second employer where the threshold was not claimed — then the same net receipts correspond to a **higher** gross income, possibly a bracket higher. So with multiple employers the derived figure is a **conservative** estimate.
+
+Conversely, with salary sacrifice the total package exceeds the taxable income derived this way.
+
+### Validating against a payslip
+
+Any single payslip validates the result:
 
 ```text
-跨档部分 × 高档税率 + 余下部分 × 低档税率
+annual base salary = monthly base × 12
+less: unpaid leave (hours × hourly rate)
+= derived gross
 ```
 
-### 家庭合计收入的附带影响
+Compared against the solved figure, the two should agree within about one percent. The payslip also confirms two of the assumptions directly: the tax scale code (whether the threshold was claimed) and whether there is a study loan deduction line.
 
-两人税前合计决定 Medicare Levy Surcharge 的档位。已投私人医院险的，应计算免缴的附加税金额 —— 保费虽不可作 deduction，但在较高收入水平上可能仍然划算。临近下一档起征点时，这项判断尤其重要。
+### Two conclusions that fall out of this
 
+**Over-withholding is refundable anyway.** Where withholding for the year (gross less net received) exceeds the annual liability, that excess has nothing to do with any deduction — it was always coming back. Present it separately from the tax saved by deductions, so the two are not conflated.
 
-## 防止重复计算
+**A deduction is worth its owner's marginal rate.** Where spouses sit in different brackets, the same dollar of deduction can differ in value by more than thirty percent. Where a deduction straddles a bracket, the effective rate is between the two:
 
-- 两个家庭账户之间同日、近似金额的出入账应配对为内部转账。
-- 信用卡或分期账户还款不是第二次消费；若已有底层购买明细，排除还款。
-- 券商入金和储蓄账户转入是资产转移，不归入生活消费。
-- 商户退款应与原支出配对；无法配对时单列，不要直接抵销整个类别。
-- 现金提取、模糊转账和支付平台交易在确认最终收款人前保持 `unresolved`。
+```text
+portion above the threshold × higher rate + remainder × lower rate
+```
 
-## 家庭收支平衡
+### The household total has its own effect
 
-账户级先验证：
+Combined gross income sets the Medicare Levy Surcharge tier. Where private hospital cover is held, calculate the surcharge avoided — the premium is not deductible, but at higher incomes the cover can still be worth it. This matters most when the household sits just below the next threshold.
+
+## Preventing double-counting
+
+- Matching debits and credits on the same day between two household accounts should be paired as an internal transfer.
+- A credit card or instalment account repayment is not a second act of consumption. Where the underlying purchases are already itemised, exclude the repayment.
+- Broker funding and transfers into savings are asset movements, not living expenses.
+- Pair merchant refunds with the original expense. Where they cannot be paired, list them separately rather than netting off a whole category.
+- Cash withdrawals, vague transfers and payment-platform transactions stay `unresolved` until the ultimate payee is established.
+
+## Household balance
+
+Verify at account level first:
 
 ```text
 opening balance + external inflows + internal inflows
 - external outflows - internal outflows = closing balance
 ```
 
-家庭级再抵销内部转账：
+Then eliminate internal transfers at household level:
 
 ```text
 external income - real expenses
@@ -105,17 +106,17 @@ external income - real expenses
 = change in household cash, allowing for opening/closing timing
 ```
 
-报告至少分开展示：工资及其他收入、住房、食品、交通、医疗保险、教育、订阅、设备、投资/债务、退款和待识别项目。不要用“其他”掩盖金额较大或周期性的商户。
+Report at minimum with salary and other income, housing, food, transport, health insurance, education, subscriptions, equipment, investment/debt, refunds and unidentified items shown separately. Do not let "other" conceal a large or recurring merchant.
 
-## 商户识别和凭证匹配
+## Merchant identification and evidence matching
 
-先按原始描述建立商户别名字典，再结合发票日期、金额、邮箱收件人、订单号和用途确认。水电网、保险、市政费、物业费和订阅应检查周期完整性；发现缺月或金额异常时，回查邮件账单或对应账户。
+Build a merchant alias dictionary from the raw descriptions first, then confirm using invoice date, amount, email recipient, order number and purpose. For utilities, insurance, council rates, levies and subscriptions, check the periods are complete; where a month is missing or an amount looks wrong, go back to the emailed bill or the relevant account.
 
-## 输出质量门槛
+## Output quality gates
 
-- 所有账户和月份均有覆盖状态；
-- 内部转账配对率和未配对金额可见；
-- 未识别交易单独列示；
-- 收入同时给出银行净收入口径和 ATO 税务口径；
-- 每个汇总数字可下钻到原交易和凭证；
-- 报税候选与普通家庭消费严格分开。
+- Every account and every month has a coverage status;
+- the internal-transfer pairing rate and the unpaired amount are visible;
+- unidentified transactions are listed separately;
+- income is stated on both the bank-net basis and the ATO tax basis;
+- every summary figure drills down to the original transaction and its evidence;
+- tax candidates are kept strictly separate from ordinary household spending.

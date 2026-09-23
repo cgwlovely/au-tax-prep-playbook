@@ -1,10 +1,12 @@
-# myTax 出租房字段对照模板
+# myTax rental field map
 
-复制到新财年后逐格填写。金额按**本人持有比例**填写；若页面要求先填全额再选比例，则填全额栏。
+*English · [中文](zh/mytax-rental-field-map.md)*
 
-## 房产信息
+Copy into each new financial year and fill in cell by cell. Enter amounts at **your ownership share**; where the page asks for the full amount and a percentage separately, use the full-amount column.
 
-| myTax 字段 | 内容 |
+## Property details
+
+| myTax field | Value |
 | --- | --- |
 | Property address | |
 | Date property first earned rental income | |
@@ -12,53 +14,53 @@
 | Your ownership percentage | |
 | Was the property available for rent all year? | |
 
-## 收入
+## Income
 
-| myTax 字段 | 中文 | 本人份额 | 全额 | 来源 |
-| --- | --- | ---: | ---: | --- |
-| Gross rent | 租金总收入 | | | 中介年度 summary |
-| Other rental related income | 其他出租相关收入 | | | 租客赔付、各类退款 |
+| myTax field | Your share | Full amount | Source |
+| --- | ---: | ---: | --- |
+| Gross rent | | | Agent's annual summary |
+| Other rental related income | | | Tenant reimbursements, refunds of all kinds |
 
-> 退款与赔付必须两侧都申报 —— 收入侧记入本行，支出侧照常列支。只报一边是常见错误。
+> Refunds and reimbursements must be reported on **both** sides — as income on this line, with the expense still itemised as usual. Reporting only one side is a common error.
 
-## 支出
+## Expenses
 
-| myTax 字段 | 中文 | 本人份额 | 全额 | 归集说明 |
-| --- | --- | ---: | ---: | --- |
-| Advertising for tenants | 招租广告 | | | |
-| Body corporate fees and charges | 物业费 | | | 中介代付 + 业主直付合并 |
-| Borrowing expenses | 借款费用摊销 | | | 贷款开办费五年摊销 |
-| Cleaning | 清洁 | | | |
-| Council rates | 市政费 | | | 仅出租房部分 |
-| Capital works deductions | 资本工程 Div 43 | | | 需合格人士出具的估算 |
-| Decline in value of depreciating assets | 设备折旧 Div 40 | | | 仅自购全新资产 |
-| Gardening/lawn mowing | 园艺除草 | | | |
-| Insurance | 保险 | | | 仅房东险 |
-| Interest on loans | 贷款利息 | | | 只扣利息，不含本金 |
-| Land tax | 土地税 | | | |
-| Legal fees | 法律费用 | | | |
-| Pest control | 虫害防治 | | | |
-| Property agent fees/commission | 中介管理费与佣金 | | | 管理费 + 出租佣金 |
-| Repairs and maintenance | 维修与保养 | | | 已剔除折旧与资本工程部分 |
-| Stationery, telephone, postage | 文具电话邮费 | | | |
-| Travel expenses | 差旅 | | | 住宅出租房自 2017-07-01 起不可扣 |
-| Water charges | 水费 | | | 仅出租房部分 |
-| Sundry rental expenses | 其他杂项 | | | 烟感检测、测量师费用等 |
+| myTax field | Your share | Full amount | How it is assembled |
+| --- | ---: | ---: | --- |
+| Advertising for tenants | | | |
+| Body corporate fees and charges | | | Agent-paid plus owner-paid, combined |
+| Borrowing expenses | | | Loan establishment costs, amortised over five years |
+| Cleaning | | | |
+| Council rates | | | Rental property portion only |
+| Capital works deductions (Div 43) | | | Requires an estimate by an appropriately qualified person |
+| Decline in value of depreciating assets (Div 40) | | | Only assets bought new by the owner |
+| Gardening/lawn mowing | | | |
+| Insurance | | | Landlord policy only |
+| Interest on loans | | | Interest only — never principal |
+| Land tax | | | |
+| Legal fees | | | |
+| Pest control | | | |
+| Property agent fees/commission | | | Management fees plus letting commission |
+| Repairs and maintenance | | | With depreciating assets and capital works already removed |
+| Stationery, telephone, postage | | | |
+| Travel expenses | | | Not deductible for residential rental property from 2017-07-01 |
+| Water charges | | | Rental property portion only |
+| Sundry rental expenses | | | Smoke alarm inspections, quantity surveyor fees and similar |
 
-## 核对
+## Checks
 
 ```text
-收入合计 - 支出合计 = 出租房净额
-各持有人份额之和 = 房产总额
+total income - total expenses = rental net result
+sum of each owner's share = the property total
 ```
 
-myTax 算出的净额应与自建工作簿一致。不一致时逐项回查，不要调整任一侧凑平。
+The net result myTax calculates should match your own workbook. Where it does not, trace back item by item — never adjust one side to force agreement.
 
-## 容易填错的地方
+## Easy mistakes
 
-- 把自住房的市政费、水费填进出租房；
-- 把中介净转账当作 Gross rent（应填中介 summary 的 Money In）；
-- 中介已代付的费用，又按发票原件重复列支；
-- 把整机更换的设备填进 Repairs and maintenance（应走 Div 40）；
-- 把资本性改良填进 Repairs and maintenance（应走 Div 43）；
-- 漏填 Other rental related income 中的退款与赔付。
+- Entering the home's council rates or water against the rental property.
+- Using the agent's net transfer as Gross rent (use Money In from the agent's summary).
+- Itemising an invoice the agent has already paid, on top of the net figure that already includes it.
+- Entering a whole replaced appliance under Repairs and maintenance (it belongs in Div 40).
+- Entering a capital improvement under Repairs and maintenance (it belongs in Div 43).
+- Omitting refunds and reimbursements from Other rental related income.

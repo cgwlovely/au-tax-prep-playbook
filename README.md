@@ -1,57 +1,67 @@
-# Personal Tax Preparation Playbook
+# AU Tax Prep Playbook
 
-澳大利亚个人及共同持有出租房报税资料整理方法库。目标是把每年重复的资料搜集、银行流水分类、房产中介对账、跨年折旧和缺件追踪变成可复用流程。
+*English · [中文](README.zh.md)*
 
-## 安全边界
+A reusable method library for preparing an Australian individual tax return where one household holds both a home and a jointly-owned rental property.
 
-本仓库只保存方法、模板和匿名示例，禁止提交：
+The aim is to turn the parts that repeat every year — collecting source documents, classifying bank transactions, reconciling against the managing agent, carrying depreciation forward, and chasing missing evidence — into a process rather than an annual scramble.
 
-- 银行流水、工资单、税号、证件及贷款文件；
-- Gmail 原件、发票原件及健康保险资料；
-- 姓名、住址、账号、客户号或真实交易金额；
-- 完整报税工作簿或税务代理提交文件。
+It is written for people who prepare their own working papers, whether they lodge through myTax or hand the result to a registered tax agent.
 
-真实材料应保存在本地加密目录或受控文档系统中。本仓库的 `.gitignore` 会拦截常见财务文件，但提交前仍须人工检查。
+## What this is not
 
-## 推荐流程
+This repository contains **methods only**. It is not tax advice, and it contains no one's actual financial data.
 
-1. 建立财年资料目录，保留原始文件，不直接修改。
-2. 汇总所有银行账户和信用卡流水，统一日期、金额和交易描述。
-3. 从 Gmail 搜索工资、房产中介、物业费、水费、市政费、保险、教育、设备及订阅凭证。
-4. 对出租房同时建立 gross 法和净现金对账，禁止把中介已经代付的费用重复扣除。
-5. 把同时涉及两处房产的账单（市政费、水费、保险、维修）按客户号或中介代付交叉排除，确定归属。
-6. 检查往年折旧表、借款费用、资本工程和上一年报税代理费；折旧资格先筛建成年份再决定是否付费评估。
-7. 将每项费用标成“已确认、条件性、排除、缺凭证”，并单列“已评估并关闭”的项目。
-8. 生成估算和缺件清单，再交给注册税务代理或用于 myTax 复核。
+Never commit:
 
-### 方法文档
+- bank statements, payslips, TFNs, identity documents or loan contracts;
+- original emails, invoices or private health insurance records;
+- names, addresses, account numbers, customer references or real transaction amounts;
+- a complete tax workbook or anything lodged with the ATO.
 
-| 文档 | 解决什么问题 |
+Keep real material in a local encrypted folder or a controlled document system. The `.gitignore` here blocks the common financial file types, but check by hand before every commit.
+
+## The workflow in outline
+
+1. Create a folder for the financial year and keep originals read-only.
+2. Consolidate every bank and credit card account into one normalised transaction set.
+3. Search email for payslips, agent statements, body corporate levies, water, council rates, insurance, education, equipment and subscriptions.
+4. Reconcile the rental property on a **gross** basis as well as net cash, so that expenses the agent already paid out of rent are never deducted twice.
+5. For bills that could belong to either property — council rates, water, insurance, repairs — establish attribution by customer reference or by cross-eliminating what the agent paid.
+6. Review last year's depreciation schedule, borrowing expenses, capital works and the tax agent fee actually paid. Screen construction dates before paying for a depreciation schedule.
+7. Mark every item `confirmed`, `conditional`, `excluded` or `missing-evidence`, and keep a separate list of items **assessed and closed**.
+8. Produce an estimate and an outstanding-items list, then lodge or hand over.
+
+## Method documents
+
+| Document | What it solves |
 | --- | --- |
-| [年度流程](docs/annual-workflow.md) | 每年按什么顺序做 |
-| [收入与家庭现金流](docs/income-and-cashflow-reconciliation.md) | 工资、转账、家庭收支口径；由税后反推税前 |
-| [出租房对账](docs/rental-reconciliation.md) | 中介 statement、银行流水、年度 summary 三层核对 |
-| [银行流水的三个陷阱](docs/bank-data-pitfalls.md) | 记账日、海外批次入账、商户名归属；分类规则的常见事故 |
-| [费用归属判定](docs/expense-attribution.md) | 两处房产的账单如何分开 |
-| [维修、改良与折旧资格](docs/repairs-vs-capital.md) | 当期可扣还是资本化；Div 43/40 资格筛查 |
-| [工作使用占比与在家办公天数的举证](docs/substantiating-work-use.md) | 设备折旧比例、居家办公工时怎么证明 |
-| [交接清单](docs/handover.md) | 交给税务代理前的检查 |
+| [Annual workflow](docs/annual-workflow.md) | The order to do things in each year |
+| [Income and household cash flow](docs/income-and-cashflow-reconciliation.md) | Salary, transfers, household spending; deriving gross income from net pay |
+| [Rental reconciliation](docs/rental-reconciliation.md) | Agent statements, bank records and the annual summary, checked against each other |
+| [Three traps in bank data](docs/bank-data-pitfalls.md) | Posting dates, overseas batching, merchant names; how classification rules go wrong |
+| [Expense attribution](docs/expense-attribution.md) | Separating bills that could belong to either property |
+| [Repairs, improvements and depreciation](docs/repairs-vs-capital.md) | Deductible now or capitalised; screening Div 43 and Div 40 eligibility |
+| [Substantiating work use](docs/substantiating-work-use.md) | Proving equipment work-use percentage and working-from-home hours |
+| [Handover checklist](docs/handover.md) | What to check before handing the file to an agent |
 
-### 模板
+## Templates
 
-| 模板 | 用途 |
+| Template | Use |
 | --- | --- |
-| [年度汇总](templates/annual-summary-template.md) | 财年结果汇总 |
-| [逐笔复核](templates/transaction-review-template.md) | 流水逐笔判断 |
-| [myTax 出租房字段对照](templates/mytax-rental-field-map.md) | 填报时逐格对照 |
+| [Annual summary](templates/annual-summary-template.md) | Financial-year result and open items |
+| [Transaction review](templates/transaction-review-template.md) | Line-by-line classification |
+| [myTax rental field map](templates/mytax-rental-field-map.md) | Field-by-field while lodging |
 
-## 目录
+## Layout
 
 ```text
-docs/       方法和交接文档
-templates/  可复制到新财年的空白模板
+docs/          method and handover documents (English)
+docs/zh/       Chinese translations
+templates/     blank templates to copy into a new financial year (English)
+templates/zh/  Chinese translations
 ```
 
-## 免责声明
+## Disclaimer
 
-本项目用于资料整理和估算，不构成税务意见。最终申报应依据当年 ATO 规则和完整凭证，必要时由注册税务代理确认。
+This project supports document preparation and estimation. It is not tax advice. Any lodgment must rest on the ATO rules current for that year and on complete substantiation, confirmed by a registered tax agent where appropriate.

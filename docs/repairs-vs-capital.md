@@ -1,124 +1,127 @@
-# 维修、改良与折旧资格
+# Repairs, improvements and depreciation eligibility
 
-中介年度 summary 常把一整年的同类支出合并成一行（例如 `Electrical Repairs`）。这一行里可能同时包含当期可扣的维修、须折旧的资产、以及须按资本工程处理的改良。**必须调出原始发票逐笔拆分**，不能整行按维修扣除。
+*English · [中文](zh/repairs-vs-capital.md)*
 
-## 一、法定依据
+A managing agent's annual summary often collapses a whole year of similar spending into one line (`Electrical Repairs`, say). That line can contain deductible repairs, depreciating assets and capital improvements all at once. **Pull the original invoices and split it item by item** — never deduct the whole line as repairs.
 
-- **ITAA97 s25-10**：维修可扣，资本性支出不可扣。
-- **TR 97/23**：维修扣除的主要裁定。
+## 1. The statutory basis
 
-### 「整体」原则（TR 97/23 §37–43）
+- **ITAA97 s25-10** — repairs are deductible; capital expenditure is not.
+- **TR 97/23** — the principal ruling on repair deductions.
 
-更换一个**整体**属资本性支出；只有更换整体中的**从属部件**才可能构成维修。
+### The "entirety" principle (TR 97/23 §37–43)
 
-判例：
+Replacing an **entirety** is capital. Only replacing a **subsidiary part** of an entirety can be a repair.
 
-- **Lindsay v FCT (1960) 106 CLR 377** —— 重建整座船台。法院认定船台本身即为一个整体，属资本性支出。这是「整体」原则的奠基判例。
-- **W Thomas & Co v FCT (1965) 115 CLR 58** —— 重申更新一个整体不构成维修；维修必须是恢复某物**局部**的功能效率。
+The cases:
 
-### 改良（TR 97/23 §44–53）
+- **Lindsay v FCT (1960) 106 CLR 377** — a whole slipway was rebuilt. The court held the slipway was itself an entirety, so the work was capital. This is the foundational case for the principle.
+- **W Thomas & Co v FCT (1965) 115 CLR 58** — restated that renewing an entirety is not a repair; a repair restores the efficiency of function of a **part** of something.
 
-使财产处于比原状**更有价值或更理想**状态的工程是改良，属资本性支出。
+### Improvements (TR 97/23 §44–53)
 
-但 **§49** 明确：仅使用现代等效材料完成同样功能，仍可构成维修。旧式材料已停产、或现行规范要求使用新式部件时，这是合法修复的唯一方式，不因此变成改良。
+Work that puts the property in a **better or more valuable** state than it was originally is an improvement, and is capital.
 
-### 初次修理（TR 97/23 §54–60）
+But **§49** is explicit: using modern equivalent materials to achieve the same function can still be a repair. Where the old material is no longer manufactured, or current standards require the modern part, that is the only lawful way to restore the thing — and it does not become an improvement for that reason.
 
-修补**取得时即已存在**的缺陷属初次修理，即使外观像维修也是资本性支出。
+### Initial repairs (TR 97/23 §54–60)
 
-## 二、判断清单
+Making good a defect that **existed when the property was acquired** is an initial repair, and is capital even though it looks like a repair.
 
-逐笔发票回答以下问题：
+## 2. The decision checklist
 
-```text
-1. 更换的是一个可独立识别的整体，还是某物的局部？
-   → 整体：资本（折旧或资本工程）
-2. 新件的功能是否优于原件（增加容量、增加保护、改变用途）？
-   → 是：倾向改良
-3. 是否因现行规范强制而不得不用新式部件？
-   → 是：倾向维修（§49）
-4. 缺陷是在取得时就存在，还是在持有期间产生？
-   → 取得时已存在：初次修理，资本
-5. 工程是故障驱动，还是预防性/合规性升级？
-   → 故障驱动：倾向维修
-```
-
-## 三、需要保存的证据链
-
-争议项目的可扣性，取决于能否还原完整的事件链：
+Ask these of each invoice:
 
 ```text
-租客报修记录（日期、投诉内容）
-  → 服务商到场的诊断报告
-  → 诊断结论（故障是否排除）
-  → 更换或修复的决定与理由
-  → 最终发票
+1. Was what was replaced a separately identifiable entirety, or part of something?
+   → entirety: capital (depreciation or capital works)
+2. Does the new item function better than the old one (more capacity, more
+   protection, a changed purpose)?
+   → yes: points to improvement
+3. Was a modern part unavoidable because current standards require it?
+   → yes: points to repair (§49)
+4. Did the defect exist at acquisition, or arise during ownership?
+   → existed at acquisition: initial repair, capital
+5. Was the work driven by a failure, or was it a preventive/compliance upgrade?
+   → failure-driven: points to repair
 ```
 
-**租客的原始报修邮件最关键** —— 它确立了「故障真实存在且影响使用」，是故障驱动的直接证据。中介的维修工单同样应保存。
+## 3. The evidence chain to keep
 
-### 三个削弱立场的常见情形
+Whether a contested item is deductible turns on whether the whole sequence of events can be reconstructed:
 
-- **工程在故障出现之前就已报价**。报价单上若写明「previously quoted N months ago」之类表述，会削弱「因故障被迫更换」的因果链。
-- **新件规格明显优于旧件**。工程范围中出现「额外容量」「每回路独立保护」等表述时，对方可直接援引 §46。
-- **故障与更换之间间隔过久**。紧迫性不易证明。
+```text
+tenant's report of the fault (date, what was complained of)
+  → the contractor's diagnostic report from attending
+  → the diagnostic conclusion (was the fault cleared?)
+  → the decision to replace or repair, and why
+  → the final invoice
+```
 
-这些不必然导致败诉，但应在交接文件中主动列出，让税务代理在知情的前提下决定，而不是替其背书一个他未看见风险的立场。
+**The tenant's original email matters most** — it establishes that the fault was real and affected use, which is direct evidence that the work was failure-driven. Keep the agent's maintenance work orders too.
 
-## 四、折旧资格：先筛后花钱
+### Three things that weaken the position
 
-### Div 43 资本工程
+- **The work was quoted before the fault appeared.** Wording on a quote like "previously quoted N months ago" undercuts the causal chain from fault to replacement.
+- **The new item is plainly higher-specification than the old.** Where the scope of works says "additional capacity" or "individual protection per circuit", the other side can point straight at §46.
+- **A long gap between fault and replacement.** Urgency becomes hard to demonstrate.
 
-住宅类的资格完全取决于**开工日期**：
+None of these is fatal, but list them openly in the handover so the tax agent decides knowing the risk, rather than endorsing a position whose weaknesses they have not seen.
 
-| 开工日期 | 年率 | 年限 |
+## 4. Depreciation eligibility: screen before you spend
+
+### Div 43 capital works
+
+For residential property, eligibility turns entirely on the **construction start date**:
+
+| Construction started | Annual rate | Period |
 | --- | ---: | ---: |
-| 1985-07-18 之前 | 无扣除 | — |
-| 1985-07-18 至 1987-09-15 | 4% | 25 年（多已用尽） |
-| 1987-09-16 之后 | 2.5% | 40 年 |
+| Before 1985-07-18 | No deduction | — |
+| 1985-07-18 to 1987-09-15 | 4% | 25 years (mostly exhausted) |
+| On or after 1987-09-16 | 2.5% | 40 years |
 
-**先确认建成年份，再决定要不要委托 quantity surveyor。** 建成年份可免费获得：
+**Establish the construction year before commissioning a quantity surveyor.** The year is usually obtainable for free:
 
-- 物业管理公司（body corporate manager）持有 scheme 完整记录；
-- 地方政府的开发审批查询系统（通常只覆盖近二十余年）；
-- 房产数据网站的建筑档案；
-- 土地登记处的原始地块计划注册日期（小额费用，法律上最硬）。
+- the body corporate manager holds the scheme's full records;
+- the local council's development approval search (typically only covers the last twenty-odd years);
+- property data websites carry building records;
+- the land registry's registration date for the original plan of subdivision (a small fee, and the strongest legally).
 
-**旁证**：电气设备的年代特征可辅助判断。仍在使用老式可换线保险丝的配电盘，通常指向 1990 年之前的建筑。
+**Corroboration**: the vintage of the electrical fitout helps. A switchboard still running rewirable fuses generally points to construction before 1990.
 
-### 原始建筑不合格，不等于永远没有
+### An ineligible original building does not close the question
 
-Div 43 把**扩建、改建、改良**视为独立的资本工程，各自按**自身开工日**计算资格：
+Div 43 treats **extensions, alterations and improvements** as separate capital works, each tested against **its own** construction start date:
 
-- 对建筑的扩建改建改良 —— 按该工程自己的开工日；
-- 结构性改良（车道、挡土墙、围栏、车棚）—— 1992-02-26 之后开工即合格；
-- 物业以 sinking fund 完成的公共部分资本工程 —— 业主按份额享有权益。
+- extensions, alterations and improvements to the building — by the date that work started;
+- structural improvements (driveways, retaining walls, fences, carports) — eligible if started on or after 1992-02-26;
+- capital works to common property funded by the sinking fund — owners share in proportion to their entitlement.
 
-因此老建筑若在 1992 年之后翻新过，仍可能有 Div 43 空间。**建议每年向物业索取 sinking fund 的资本工程支出明细留档**，成本为零，哪年真做了大工程就能接上。
+So an old building renovated after 1992 may still have Div 43 available. **Ask the body corporate each year for the sinking fund's capital works expenditure and keep it on file.** It costs nothing, and the year a major project does happen, the record is already there.
 
-### 谁能估算建造成本
+### Who may estimate construction cost
 
-**TR 97/25**：实际建造成本无法取得时，只有「适当资格人士」的估算被接受 —— quantity surveyor、clerk of works、supervising architect、有同类工程估算经验的 builder。
+**TR 97/25**: where the actual construction cost cannot be obtained, only an estimate by an "appropriately qualified person" is accepted — a quantity surveyor, clerk of works, supervising architect, or a builder experienced in estimating that kind of work.
 
-裁定明文排除估值师、中介、会计师与律师。纳税人本人的估算同样不被接受。
+The ruling expressly excludes valuers, real estate agents, accountants and solicitors. An estimate by the taxpayer is likewise not accepted.
 
-### Div 40 设备折旧
+### Div 40 depreciating assets
 
-- **s40-27**：2017-05-09 之后取得的二手住宅，不可对**购入时已存在**的资产计折旧。
-- 业主自行购买并安装的**全新**资产不受此限。
-- 成本低于 300 元可即时全额扣除；低于 1,000 元可并入低值资产池。
+- **s40-27**: for a second-hand residential property acquired on or after 2017-05-09, you cannot depreciate assets that were **already in the property when you acquired it**.
+- **New** assets the owner buys and installs are not caught by this.
+- Assets costing under $300 can be deducted immediately; under $1,000 they can go into a low-value pool.
 
-**低值资产池对短期持有特别有利**：首年按成本的 18.75% 计，且**不按持有天数摊分**。财年末才安装的资产，用低值池可能比递减价值法高出数倍。
+**The low-value pool is particularly favourable for a short first year**: the first-year deduction is 18.75% of cost and is **not** apportioned by days held. For an asset installed near the end of a financial year, the pool can be worth several times the diminishing value result.
 
-选用低值池后，此后所有低成本资产必须一并并入，须一致执行。
+Once you choose the pool, every subsequent low-cost asset must go into it as well. The choice has to be applied consistently.
 
-## 五、把结论记录下来
+## 5. Write the conclusion down
 
-评估后确认没有空间的项目，应在交接文件中单列「已评估并关闭」，写明：
+Anything assessed and found to have no room should be listed separately in the handover as **assessed and closed**, stating:
 
-- 结论与金额；
-- 判断依据与法条；
-- 旁证；
-- **什么情况下需要重开**。
+- the conclusion and the amount;
+- the basis and the provision relied on;
+- the corroborating evidence;
+- **what would cause it to be reopened**.
 
-否则同一项目会在次年被重复评估，浪费时间也可能重复付费。
+Otherwise the same item gets reassessed next year — wasting time, and possibly paying for the same advice twice.

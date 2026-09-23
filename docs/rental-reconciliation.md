@@ -1,45 +1,47 @@
-# 出租房收入和费用对账
+# Rental income and expense reconciliation
 
-## 核心原则
+*English · [中文](zh/rental-reconciliation.md)*
 
-正式申报通常需要报告 gross rent，再逐项申报允许扣除的费用。银行收到的中介转账往往是扣除管理费、维修、物业费和暂扣余额后的净额，不能直接当作 gross rent。
+## The core principle
 
-在年度 summary 尚未取得时，可以使用净现金法做临时估算，但必须遵守：
+Lodgment generally requires reporting **gross rent** and then itemising the deductible expenses. What the agent transfers to your bank is usually a net amount — after management fees, repairs, levies and any withheld balance — and cannot be treated as gross rent.
 
-> 银行收到的中介净转账 + 业主直接支付的合资格费用；中介已经从租金代付的费用不能再次加入。
+Before the annual summary arrives, a net-cash estimate is acceptable as an interim figure, provided it obeys:
 
-## 三层核对
+> net agent transfers received + eligible expenses the owner paid directly; expenses the agent already paid out of rent are never added again.
 
-### 1. 中介 statement
+## Three layers of checking
 
-逐期记录：
+### 1. Agent statements
 
-- Money In；
-- Money Out；
-- You Received；
-- balance brought forward / withheld；
-- rent、refund、bond claim 等非普通入账；
-- 管理费、招租费、维修、水费、市政费和物业费。
+Record, for every period:
 
-连续 statement 的余额应能衔接。`Payment withheld` 通常只是中介保留租金等待支付账单，不是业主向中介付款。
+- Money In;
+- Money Out;
+- You Received;
+- balance brought forward / withheld;
+- non-ordinary credits such as rent, refunds and bond claims;
+- management fees, letting fees, repairs, water, council rates and levies.
 
-建立 statement 控制表，记录每期编号、覆盖日期、期初余额、Money In、Money Out、You Received 和期末余额。缺号、日期断档或余额不衔接时，不应把年度结果标为已对平。
+Balances on consecutive statements must join up. `Payment withheld` usually just means the agent is holding rent to pay a bill — it is not a payment by the owner to the agent.
 
-### 2. 银行流水
+Build a statement control sheet recording, per period: statement number, date range, opening balance, Money In, Money Out, You Received and closing balance. If a number is missing, a date range is broken, or balances do not join, the year is not reconciled.
 
-将 `You Received` 与中介转账逐笔匹配。另查：
+### 2. Bank records
 
-- 贷款利息；
-- 房东保险；
-- body corporate / DEFT；
-- council rates、water、repairs；
-- 向中介或供应商的直接付款。
+Match `You Received` against the agent's transfers, one by one. Then look separately for:
 
-同额不等于同一费用。优先使用账户号、物业地址、DEFT reference、发票号和付款日期确认。
+- loan interest;
+- landlord insurance;
+- body corporate / DEFT;
+- council rates, water, repairs;
+- direct payments to the agent or a supplier.
 
-### 3. 年度 Financial Summary
+Equal amounts are not the same expense. Confirm with the account number, property address, DEFT reference, invoice number and payment date.
 
-年度 summary 到手后，用 gross 法重建：
+### 3. The annual financial summary
+
+Once the annual summary arrives, rebuild on the gross basis:
 
 ```text
 gross rent and other rental income
@@ -53,64 +55,64 @@ gross rent and other rental income
 = rental profit or loss
 ```
 
-把结果与净现金法比较，差额通常来自年末暂扣余额、bond/refund、业主直接付款或缺失 statement。
+Compare that with the net-cash figure. The difference usually comes from the balance withheld at year end, bonds and refunds, owner-paid items, or a missing statement.
 
-先验证年度 summary 自身的恒等式：
+First verify the annual summary's own identity:
 
 ```text
 Money In - Money Out = annual net movement
 ```
 
-再建立桥接表：
+Then build a bridge:
 
 ```text
 annual net movement
 + opening agent balance
 - closing agent balance
 +/- bond, refund and owner contribution adjustments
-= transfers received in owner bank account
+= transfers received in the owner's bank account
 ```
 
-保留未解释差额，并设置明确容差。不能为了对平而把差额塞入“其他费用”。
+Keep any unexplained difference and set an explicit tolerance. Never push a difference into "other expenses" to make it balance.
 
-## 多年度比较
+## Comparing across years
 
-水费、市政费和物业费应按账单覆盖期间比较，而不是只按银行付款月份比较。推荐每项同时记录：
+Water, council rates and levies should be compared by the period the bill covers, not by the month the bank paid it. Record, for each:
 
-- 账单期起止日和付款日；
-- 中介代付或业主直付；
-- 总额、可扣部分和资本部分；
-- 与上一年、前一年的同比变化；
-- 缺失季度或重复账单。
+- the billing period and the payment date;
+- whether the agent or the owner paid;
+- the total, the deductible part and the capital part;
+- the change against the previous one and two years;
+- any missing quarter or duplicated bill.
 
-若上一财年提前支付下一期间的 levy、保险或其他费用，应单独列为跨期项目，交由税务代理确认可扣年度。
+Where last financial year prepaid a levy, premium or other cost covering the next period, list it separately as a cross-period item and have the tax agent confirm the year it is deductible.
 
 ## Body corporate
 
-- 普通 administration fund 和 general-purpose sinking fund contribution 通常可立即扣除。
-- 为特定资本改善筹集的 special levy 通常不能立即全额扣除；可能在工程完成后按 capital works 处理。
-- 一笔 levy 同时包含 admin 和普通 sinking fund 时，保留 notice 和 statement 证明性质。
-- 中介代付的 levy 已体现在较低净转账中；业主直接支付的 levy 才能在净现金临时估算中另加。
+- Ordinary administration fund and general-purpose sinking fund contributions are usually immediately deductible.
+- A special levy raised for a specific capital improvement is usually not immediately deductible in full; it may become capital works once the project completes.
+- Where one levy covers both admin and the general sinking fund, keep the notice and statement as evidence of its character.
+- Levies the agent paid are already reflected in a lower net transfer. Only levies the owner paid directly can be added on top in a net-cash interim estimate.
 
-## 共同持有
+## Joint ownership
 
-租金收入和出租房费用通常按法律权益比例分配。把比例作为年度输入，不要默认沿用上一年；产权或权益变化时重新确认。
+Rental income and expenses are generally apportioned by legal interest. Treat the percentage as an annual input rather than carrying last year's forward, and re-confirm it whenever title or interest changes.
 
-## 常见重复错误
+## Recurring errors
 
-- 用中介净转账作收入，同时再次扣除中介 Money Out；
-- 把自住房和投资房同金额的 council/water 账单混在一起；
-- 把 bond、cleaning refund 或租客 reimbursement 当成业主注资；
-- 把贷款本金和利息一起扣除；
-- 把 special capital levy 当作普通季度 levy；
-- 只看银行商户名，不核对地址或客户号。
-- 年度中介净额已经包含水费等代付项目，却又把发票合计加到费用中；
-- 直接沿用往年工作簿的汇总值，没有独立重算明细、净额和持有比例。
+- Using the agent's net transfer as income while also deducting the agent's Money Out.
+- Mixing together the home's and the rental's council and water bills when the amounts are similar.
+- Treating a bond, cleaning refund or tenant reimbursement as an owner contribution.
+- Deducting loan principal along with interest.
+- Treating a special capital levy as an ordinary quarterly levy.
+- Reading only the bank merchant name without checking the address or customer reference.
+- Adding invoice totals on top of a net agent figure that already includes those same items, such as water.
+- Carrying summary values forward from an earlier workbook without independently recomputing the detail, the net figure and the ownership split.
 
-## 独立复核公式
+## Independent check formulas
 
-工作簿至少应有三项自动检查：
+A workbook should carry at least three automatic checks:
 
-1. 明细收入减明细费用等于出租房净额；
-2. 共同持有人的分配额合计等于房产总额；
-3. 中介费用、业主直付费用和银行净收款之间不存在重复计入。
+1. Itemised income minus itemised expenses equals the rental net result.
+2. The co-owners' shares sum to the property total.
+3. Agent-paid expenses, owner-paid expenses and the net bank receipt contain no double-count between them.

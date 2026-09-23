@@ -1,102 +1,104 @@
-# 工作使用占比与在家办公天数的举证
+# Substantiating work-use percentage and days at home
 
-设备折旧的工作占比、居家办公的工时，都是纳税人自行主张的数字。ATO 的要求不是「数字要小」，而是「要有依据」。高占比本身不构成问题，举证不足才是。
+*English · [中文](zh/substantiating-work-use.md)*
 
-本文记录几种可从既有数据构建举证的方法，以及每种方法的边界。
+The work-use percentage on equipment and the hours worked from home are both figures the taxpayer asserts. What the ATO requires is not that the number be small, but that it have a basis. A high percentage is not itself a problem; a poorly evidenced one is.
 
-## 一、设备工作使用占比
+This document records several ways to build that basis out of records you already have, and the limits of each.
 
-### 可用的自动记录
+## 1. Work-use percentage on equipment
 
-开发与 AI 工具通常把会话记录写在本地，且每条自带时间戳与工作目录：
+### Automatic records you already have
 
-```text
-~/.claude/projects/**/*.jsonl        每行含 timestamp 与 cwd
-~/.codex/**/*.jsonl                  同上
-```
-
-把这些时间戳按「间隔 ≤ 20 分钟视为同一时段」合并，即可得到带起止时间的工作时段序列。再按 `cwd` 或会话内容关键词分类为工作 / 私人。
-
-补充证据：工作目录下文件的修改时间（mtime），可覆盖未经 AI 工具完成的工作。
-
-### 这类记录能证明什么
-
-- 带时间戳、可回溯、非事后回忆；
-- 直接确立「这些时段在工作」；
-- 工作性质明确（可按项目目录区分），不是泛泛的「开着机」。
-
-### 不能单独证明什么
+Development and AI tools generally write session records locally, each entry carrying a timestamp and a working directory:
 
 ```text
-工作使用占比 = 工作时长 ÷ 总使用时长
+~/.claude/projects/**/*.jsonl        each line carries a timestamp and cwd
+~/.codex/**/*.jsonl                  same
 ```
 
-工具日志把**分子**记录得很扎实，但捕捉不到**分母**中不经这些工具的私人使用（网页浏览、影音、私人邮件）。
+Merge those timestamps with a rule such as "gaps of 20 minutes or less belong to the same session" and you get a sequence of work sessions with start and end times. Then classify each as work or private by `cwd`, or by keywords in the session.
 
-因此这类日志得出的是「工具使用时间内的工作占比」，不等于「设备总使用时间内的工作占比」。申报时应在日志显示值的基础上留出余量。
+Supplementary evidence: file modification times under your work directories, which cover work done without the AI tools.
 
-### 补上分母的两条路
+### What these records do prove
 
-1. **系统使用数据**：macOS 的屏幕使用时间数据库按应用记录前台时长，可覆盖浏览器与影音。默认受系统保护，需在「隐私与安全性 → 完全磁盘访问权限」中授权后读取。该库通常只保留最近约四周，越早导出越完整。
-2. **手工记录**：连续四周粗记每日私人使用时长即可，ATO 接受合理估算。只需记私人侧，工作侧已由日志覆盖。
+- They are timestamped, auditable, and not reconstructed after the fact.
+- They establish directly that you were working during those periods.
+- The nature of the work is identifiable (by project directory), rather than a vague claim that the machine was switched on.
 
-### 一个可佐证真实性的细节
-
-日志中的空档若与已知行程（旅行、休假）吻合，说明记录反映真实使用而非估算填充。整理时应主动指出这类吻合。
-
-## 二、在家办公天数
-
-### 由通勤记录反推
-
-公共交通卡的出行记录（travel history）逐程列明日期、时间与站点，是同期生成的第三方记录。
+### What they do not prove on their own
 
 ```text
-在家天数 = 财年工作日 - 公共假期 - 年假病假 - 通勤日
+work-use percentage = time spent working ÷ total time the device was used
 ```
 
-通勤日的定义应明确，例如「当日有自住处附近站点出发、时间在早通勤时段内的行程」。
+Tool logs evidence the **numerator** very well. They do not capture the part of the **denominator** that happens outside those tools — web browsing, video, personal email.
 
-出行记录还能验证工作模式：若通勤日高度集中在固定的两三个星期几，说明是规律的混合办公安排，这本身就是有力的佐证。
+So a log of this kind yields "the work share of time spent in these tools", not "the work share of total device use". Leave headroom below the logged figure when claiming.
 
-### 边界：它只能证明「在办公室」
+### Two ways to fill in the denominator
 
-未刷卡的日子可能是在家办公、年假、病假，或**自驾到岗**。因此由通勤记录推出的在家天数是**上限**。
+1. **System usage data.** The macOS Screen Time database records foreground time per application, which covers browsers and video. It is protected by default and has to be authorised under Privacy & Security → Full Disk Access before it can be read. It typically retains only about four weeks, so export it early.
+2. **A manual record.** Four consecutive weeks of rough daily private-use time is enough; the ATO accepts a reasonable estimate. Only the private side needs recording, since the logs already cover the work side.
 
-判别是否存在自驾通勤：比较多年的公共交通支出与加油支出趋势。若交通卡支出大幅下降而加油支出同步上升，说明通勤方式已转向自驾，通勤记录的覆盖度相应下降。
+### One detail that corroborates authenticity
 
-### 更直接的证据
+Where gaps in the log line up with known absences — travel, leave — that shows the record reflects real use rather than being filled in. Point out those coincidences when writing it up.
 
-工作日历（Outlook / Teams 的在家办公标记）、考勤表、值班表是 PCG 2023/1 直接认可的形式。通勤记录属于强佐证，但严格而言是反推，建议两者并存。
+## 2. Days worked from home
 
-## 三、居家办公方法的选择
+### Deriving them from commuting records
 
-两种方法只能二选一，且举证要求不同：
+Public transport card travel history lists every journey with date, time and stop. It is a third-party record created at the time.
 
-| | 固定费率法 | 实际成本法 |
+```text
+days at home = working days in the year - public holidays - leave - commuting days
+```
+
+Define a commuting day explicitly — for example, "a journey starting from a stop near home, within the morning commute window".
+
+Travel history also validates the pattern of work: if commuting days cluster heavily on two or three fixed weekdays, that is a regular hybrid arrangement, which is itself strong corroboration.
+
+### The limit: it only proves you were in the office
+
+A day with no tap-on could be working from home, annual leave, sick leave — or **driving in**. So days at home derived from travel history is an **upper bound**.
+
+To test whether driving is happening, compare public transport spending against fuel spending across several years. Transport card spending falling sharply while fuel rises means commuting has shifted to the car, and the travel history covers proportionally less.
+
+### More direct evidence
+
+A work calendar (working-from-home markers in Outlook or Teams), timesheets and rosters are forms PCG 2023/1 accepts directly. Travel history is strong corroboration but is strictly an inference — keep both.
+
+## 3. Choosing a home-office method
+
+The two methods are mutually exclusive, and their record-keeping requirements differ:
+
+| | Fixed rate | Actual cost |
 | --- | --- | --- |
-| 计算 | 全年在家工时 × 当年费率 | 各项实际支出 × 工作比例 |
-| 涵盖范围 | 电费、燃气、宽带、电话、文具耗材 | 按实际列支 |
-| 可另扣 | 设备折旧 | 设备折旧 |
-| **记录要求** | **全年每一次在家工作的实际工时**（PCG 2023/1，2023-03-01 起；四周代表期不够） | 四周代表期使用记录 + 全年账单 + 专用工作区域 |
+| Calculation | Hours worked at home for the year × that year's rate | Each actual cost × work-use percentage |
+| Covers | Electricity, gas, internet, phone, stationery and consumables | Whatever is itemised |
+| Claimable separately | Equipment depreciation | Equipment depreciation |
+| **Records required** | **Actual hours for every occasion worked at home, for the whole year** (PCG 2023/1, from 2023-03-01; a four-week sample is not enough) | A four-week representative record of use, plus full-year bills, plus a dedicated work area |
 
-选固定费率法后不得再单独扣宽带与话费。
+Having chosen the fixed rate, you cannot also claim internet and phone separately.
 
-判断哪种更有利，应按实际在家天数与标准工时试算，不要默认沿用。在家天数较多时固定费率法通常更优，且举证负担更轻。
+Work out which is better by calculating both against the actual days at home and standard hours. Do not default to last year's choice. Where days at home are high, the fixed rate is usually better and carries a lighter evidentiary burden.
 
-### 标准工时从哪里来
+### Where standard hours come from
 
-工资单上的「月标准工时」除以每月工作日，即为标准工作日时长。不要用行业惯例代替 —— 不同雇主差异可达每日半小时以上，累计一年会影响数百元。
+Take the monthly standard hours from a payslip and divide by working days in that month. Do not substitute an industry convention — employers differ by more than half an hour a day, which compounds into hundreds of dollars over a year.
 
 ```text
-时薪 = 某项按小时计的款项金额 ÷ 对应小时数
-月标准工时 = 月基本工资 ÷ 时薪
-每日标准工时 = 月标准工时 ÷ 每月工作日
+hourly rate          = amount of any hourly-paid line ÷ the hours it covers
+monthly standard hrs = monthly base salary ÷ hourly rate
+daily standard hrs   = monthly standard hours ÷ working days that month
 ```
 
-## 四、折旧资产的起算日
+## 4. When depreciation starts
 
-折旧自资产**首次使用或安装可供使用**之日起算，不是购买日。
+Depreciation runs from the date an asset is **first used or installed ready for use** — not the date it was bought.
 
-若设备在财年结束前数日购入、次财年才实际启用，则该财年折旧为零，全部落入次年，且次年为折旧第一年。
+Equipment bought a few days before year end but not actually put to use until the next year gives a deduction of zero in the first year. The whole amount falls into the following year, and that year is year one.
 
-判别首次使用日的可用证据：系统首次设置日、工具日志中最早一条记录、首次登录或激活记录。
+Evidence for the first-use date: the initial system setup date, the earliest entry in a tool's logs, the first sign-in or activation record.

@@ -21,3 +21,6 @@ private/
 
 # Allow deliberately maintained Markdown templates
 !templates/*.md
+!templates/zh/*.md
+!docs/*.md
+!docs/zh/*.md
