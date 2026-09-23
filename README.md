@@ -19,11 +19,31 @@
 2. 汇总所有银行账户和信用卡流水，统一日期、金额和交易描述。
 3. 从 Gmail 搜索工资、房产中介、物业费、水费、市政费、保险、教育、设备及订阅凭证。
 4. 对出租房同时建立 gross 法和净现金对账，禁止把中介已经代付的费用重复扣除。
-5. 检查往年折旧表、借款费用、资本工程和上一年报税代理费。
-6. 将每项费用标成“已确认、条件性、排除、缺凭证”。
-7. 生成估算和缺件清单，再交给注册税务代理或用于 myTax 复核。
+5. 把同时涉及两处房产的账单（市政费、水费、保险、维修）按客户号或中介代付交叉排除，确定归属。
+6. 检查往年折旧表、借款费用、资本工程和上一年报税代理费；折旧资格先筛建成年份再决定是否付费评估。
+7. 将每项费用标成“已确认、条件性、排除、缺凭证”，并单列“已评估并关闭”的项目。
+8. 生成估算和缺件清单，再交给注册税务代理或用于 myTax 复核。
 
-详细步骤见 [年度流程](docs/annual-workflow.md)、[收入与家庭现金流](docs/income-and-cashflow-reconciliation.md)、[出租房对账](docs/rental-reconciliation.md) 和 [交接清单](docs/handover.md)。
+### 方法文档
+
+| 文档 | 解决什么问题 |
+| --- | --- |
+| [年度流程](docs/annual-workflow.md) | 每年按什么顺序做 |
+| [收入与家庭现金流](docs/income-and-cashflow-reconciliation.md) | 工资、转账、家庭收支口径；由税后反推税前 |
+| [出租房对账](docs/rental-reconciliation.md) | 中介 statement、银行流水、年度 summary 三层核对 |
+| [银行流水的三个陷阱](docs/bank-data-pitfalls.md) | 记账日、海外批次入账、商户名归属；分类规则的常见事故 |
+| [费用归属判定](docs/expense-attribution.md) | 两处房产的账单如何分开 |
+| [维修、改良与折旧资格](docs/repairs-vs-capital.md) | 当期可扣还是资本化；Div 43/40 资格筛查 |
+| [工作使用占比与在家办公天数的举证](docs/substantiating-work-use.md) | 设备折旧比例、居家办公工时怎么证明 |
+| [交接清单](docs/handover.md) | 交给税务代理前的检查 |
+
+### 模板
+
+| 模板 | 用途 |
+| --- | --- |
+| [年度汇总](templates/annual-summary-template.md) | 财年结果汇总 |
+| [逐笔复核](templates/transaction-review-template.md) | 流水逐笔判断 |
+| [myTax 出租房字段对照](templates/mytax-rental-field-map.md) | 填报时逐格对照 |
 
 ## 目录
 
