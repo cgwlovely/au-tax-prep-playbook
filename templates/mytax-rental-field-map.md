@@ -19,9 +19,13 @@ Copy into each new financial year and fill in cell by cell. Enter amounts at **y
 | myTax field | Your share | Full amount | Source |
 | --- | ---: | ---: | --- |
 | Gross rent | | | Agent's annual summary |
-| Other rental related income | | | Tenant reimbursements, refunds of all kinds |
+| Other rental related income | | | Reimbursements, recoupments and recoveries — see the note below |
 
-> Refunds and reimbursements must be reported on **both** sides — as income on this line, with the expense still itemised as usual. Reporting only one side is a common error.
+> **Treat every refund, reimbursement, insurance recovery or rebate as `conditional` until its character is established.** Some are assessable income, some reduce a cost base, some trigger a balancing adjustment on a depreciating asset. The determination comes first; the field comes second.
+>
+> The clearest case: where a tenant pays you for damage and you deduct the cost of the repair, the **whole** amount received goes in as income. Insurance proceeds on a capital item, a rebate on a depreciating asset, and a bond applied to rent arrears are each handled differently.
+>
+> What is always wrong is claiming the expense while the recovery goes unreported. That is the error this line exists to prevent.
 
 ## Expenses
 
@@ -29,13 +33,13 @@ Copy into each new financial year and fill in cell by cell. Enter amounts at **y
 | --- | ---: | ---: | --- |
 | Advertising for tenants | | | |
 | Body corporate fees and charges | | | Agent-paid plus owner-paid, combined |
-| Borrowing expenses | | | Loan establishment costs, amortised over five years |
+| Borrowing expenses | | | Spread over 5 years **or the term of the loan, whichever is shorter**. If total eligible borrowing expenses are $100 or less, deduct in full in the year incurred. On early full repayment, the remaining balance is deductible in the year of repayment. |
 | Cleaning | | | |
 | Council rates | | | Rental property portion only |
-| Capital works deductions (Div 43) | | | Requires an estimate by an appropriately qualified person |
+| Capital works deductions (Div 43) | | | Use actual construction expenditure where it can be obtained. Only where it cannot is an estimate by an appropriately qualified person needed (TR 97/25). Screen the construction date first — see [repairs-vs-capital](../docs/repairs-vs-capital.md). |
 | Decline in value of depreciating assets (Div 40) | | | Only assets bought new by the owner |
 | Gardening/lawn mowing | | | |
-| Insurance | | | Landlord policy only |
+| Insurance | | | Cover **on the rental property** — building, contents, public liability and loss of rent all qualify. The test is what the policy covers, not whether it is branded "landlord insurance". Your own home's policy is not claimable here; see [expense-attribution](../docs/expense-attribution.md) for separating policies with one insurer. |
 | Interest on loans | | | Interest only — never principal |
 | Land tax | | | |
 | Legal fees | | | |

@@ -79,9 +79,13 @@ The two methods are mutually exclusive, and their record-keeping requirements di
 | Calculation | Hours worked at home for the year × that year's rate | Each actual cost × work-use percentage |
 | Covers | Electricity, gas, internet, phone, stationery and consumables | Whatever is itemised |
 | Claimable separately | Equipment depreciation | Equipment depreciation |
-| **Records required** | **Actual hours for every occasion worked at home, for the whole year** (PCG 2023/1, from 2023-03-01; a four-week sample is not enough) | A four-week representative record of use, plus full-year bills, plus a dedicated work area |
+| **Records required** | **Actual hours for every occasion worked at home, for the whole year** (PCG 2023/1, from 2023-03-01; a four-week sample is not enough) | Receipts and bills for every expense claimed, plus a record of hours — actual, or a representative four-week diary showing the usual pattern |
 
 Having chosen the fixed rate, you cannot also claim internet and phone separately.
+
+**A dedicated work area is not a general precondition for the actual cost method.** Without one you still apportion each expense by work use. What a dedicated room unlocks is a narrow set of additional items — principally cleaning of that room, apportioned by its floor area against the whole dwelling and then reduced for private and other-household use. Occupancy expenses (rent, mortgage interest, rates) are a separate and much harder test, and are generally not available to an employee.
+
+Under the actual cost method a continuous four-week representative period is expressly allowed: for the hours record where it shows the usual pattern, and for working out the work-related percentage on an itemised phone or internet bill, which is then applied across the year.
 
 Work out which is better by calculating both against the actual days at home and standard hours. Do not default to last year's choice. Where days at home are high, the fixed rate is usually better and carries a lighter evidentiary burden.
 

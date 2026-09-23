@@ -48,6 +48,9 @@
 - [ ] Combined lines in the agent's summary have been split against the original invoices (repairs / depreciating assets / capital works).
 - [ ] Depreciation eligibility was screened by construction year before any quantity surveyor was engaged.
 - [ ] Items assessed and found to have no room are listed separately as **assessed and closed**, with the basis and the conditions for reopening.
+- [ ] Every rate or threshold used came from `rules/<year>/`, and no rule marked `needs-review` was relied on without opening its source.
+- [ ] No amount derived from the net-pay sanity check has been used as an income figure — actual gross and PAYG come from the income statement.
+- [ ] Every refund, reimbursement, insurance recovery and rebate has had its character determined (income / cost base / balancing adjustment), not defaulted.
 - [ ] The repository has been re-checked for personal data — names, addresses, account numbers and real amounts — before pushing.
 
 ## Suggested handover format

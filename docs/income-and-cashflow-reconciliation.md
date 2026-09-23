@@ -32,44 +32,54 @@ evidence | counterparty | transfer_match | notes
 3. Confirm gross income and PAYG withheld per employer from the ATO income statement.
 4. Net salary received is for cash-flow and completeness checking only. It is not the income figure to lodge.
 
-## Deriving gross income from net pay
+## Net-pay sanity check: estimating gross income
 
-Before the ATO income statement is available, there is no need to assume a tax rate. The bank receives the net amount, and the year's rate scale can be solved backwards to give both gross income and the marginal rate.
+> **This is a cash-flow sanity check, not a tax calculation.** It exists to spot a missing month, an unrecorded employer or a wrong ownership assumption before the real figures arrive. It never substitutes for the ATO income statement or a payslip, and no amount derived this way should be lodged.
+
+Before the income statement is available, the bank shows only the net amount. Solving the year's rate scale backwards gives an approximate gross and an indicative marginal rate:
 
 ```text
-find G such that:  G - income tax(G) - Medicare(G) = total net received for the year
+find G such that:  G - income tax(G) - Medicare(G) ≈ total net received for the year
 ```
 
-Income tax is the progressive scale for that year; Medicare is a fixed proportion of gross. Bisection over a plausible range solves it.
+Income tax is the progressive scale for that year; Medicare is a fixed proportion. Bisection over a plausible range solves it.
 
-### Assumptions
+### Why the result is approximate
 
-- The tax-free threshold has been claimed;
-- no HELP/HECS debt;
-- no salary sacrifice (additional pre-tax super, for example);
-- no other pre-tax withholding.
+The solve treats PAYG withheld as if it equalled the annual liability. It does not. PAYG is calculated per pay period from the ATO's withholding schedules, which the ATO publishes separately each year, and it diverges from the annual assessment because of:
 
-### Which way the error runs when they do not hold
+- rounding within the schedules, and pay frequency;
+- bonuses and back payments, withheld under their own schedule;
+- part-year employment, or a change of employer mid-year;
+- the tax-free threshold claimed with more than one employer, or with none;
+- a study or training support loan, withheld at its own rate;
+- salary sacrifice and other pre-tax deductions, which the bank never sees.
 
-If actual withholding is **higher** than the standard annual liability — a HELP debt, or a second employer where the threshold was not claimed — then the same net receipts correspond to a **higher** gross income, possibly a bracket higher. So with multiple employers the derived figure is a **conservative** estimate.
+The gap between withholding and liability is exactly what produces a refund or a bill at assessment. A method that assumes the gap is zero cannot also measure it.
 
-Conversely, with salary sacrifice the total package exceeds the taxable income derived this way.
+### The assumptions, and which way the error runs
+
+Assumed: the tax-free threshold is claimed, with one employer; no study or training loan; no salary sacrifice; no other pre-tax withholding.
+
+Where withholding is **higher** than the standard annual liability — a study loan, or a second employer where the threshold was not claimed — the same net receipts imply a **higher** gross, possibly a bracket higher. With multiple employers the derived figure is therefore **conservative**. With salary sacrifice, the total package exceeds the taxable income derived this way.
 
 ### Validating against a payslip
 
-Any single payslip validates the result:
+One payslip settles it, and should be obtained rather than relied on as a cross-check of last resort:
 
 ```text
 annual base salary = monthly base × 12
 less: unpaid leave (hours × hourly rate)
-= derived gross
+= gross per the payslip
 ```
 
-Compared against the solved figure, the two should agree within about one percent. The payslip also confirms two of the assumptions directly: the tax scale code (whether the threshold was claimed) and whether there is a study loan deduction line.
+Where the assumptions hold, this has agreed with the solved figure to within about one percent — but treat the payslip as the answer and the solve as the thing being checked, not the reverse. The payslip also confirms two assumptions directly: the tax scale code (whether the threshold was claimed) and whether there is a study loan deduction line.
 
-### Two conclusions that fall out of this
+### Two things to keep separate once the real figures arrive
 
-**Over-withholding is refundable anyway.** Where withholding for the year (gross less net received) exceeds the annual liability, that excess has nothing to do with any deduction — it was always coming back. Present it separately from the tax saved by deductions, so the two are not conflated.
+These both need **actual** gross and PAYG from the income statement. Neither can be derived from the solve above, which assumes the two are equal by construction.
+
+**Over-withholding is refundable regardless of deductions.** Where PAYG withheld for the year exceeds the annual liability on the assessed income, that excess was always coming back and has nothing to do with any deduction. Present it separately from the tax saved by deductions, so the two are not conflated.
 
 **A deduction is worth its owner's marginal rate.** Where spouses sit in different brackets, the same dollar of deduction can differ in value by more than thirty percent. Where a deduction straddles a bracket, the effective rate is between the two:
 
@@ -79,7 +89,7 @@ portion above the threshold × higher rate + remainder × lower rate
 
 ### The household total has its own effect
 
-Combined gross income sets the Medicare Levy Surcharge tier. Where private hospital cover is held, calculate the surcharge avoided — the premium is not deductible, but at higher incomes the cover can still be worth it. This matters most when the household sits just below the next threshold.
+Combined income for surcharge purposes sets the Medicare Levy Surcharge tier. Where private hospital cover is held, calculate the surcharge avoided — the premium is not deductible, but at higher incomes the cover can still be worth it. This matters most when the household sits just below the next threshold. The tier thresholds are indexed; take them from `rules/` for the year, not from memory.
 
 ## Preventing double-counting
 
