@@ -1,0 +1,23 @@
+# Never commit personal source documents
+*.csv
+*.xlsx
+*.xls
+*.pdf
+*.docx
+*.jpg
+*.jpeg
+*.png
+*.heic
+*.zip
+
+# Local working folders
+data/
+raw/
+sources/
+downloads/
+evidence/
+private/
+.DS_Store
+
+# Allow deliberately maintained Markdown templates
+!templates/*.md
