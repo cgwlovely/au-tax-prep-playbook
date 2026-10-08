@@ -27,10 +27,11 @@ Keep real material in a local encrypted folder or a controlled document system. 
 2. Consolidate every bank and credit card account into one normalised transaction set.
 3. Search email for payslips, agent statements, body corporate levies, water, council rates, insurance, education, equipment and subscriptions.
 4. Reconcile the rental property on a **gross** basis as well as net cash, so that expenses the agent already paid out of rent are never deducted twice.
-5. For bills that could belong to either property — council rates, water, insurance, repairs — establish attribution by customer reference or by cross-eliminating what the agent paid.
-6. Review last year's depreciation schedule, borrowing expenses, capital works and the tax agent fee actually paid. Screen construction dates before paying for a depreciation schedule.
-7. Mark every item `confirmed`, `conditional`, `excluded` or `missing-evidence`, and keep a separate list of items **assessed and closed**.
-8. Produce an estimate and an outstanding-items list, then lodge or hand over.
+5. Build an independent model of the expected refund before trusting the lodgment tool's own figure — the gap, if any, localises the error.
+6. For bills that could belong to either property — council rates, water, insurance, repairs — establish attribution by customer reference or by cross-eliminating what the agent paid.
+7. Review last year's depreciation schedule, borrowing expenses, capital works and the tax agent fee actually paid. Screen construction dates before paying for a depreciation schedule.
+8. Mark every item `confirmed`, `conditional`, `excluded` or `missing-evidence`, and keep a separate list of items **assessed and closed**.
+9. Produce an estimate and an outstanding-items list, then lodge or hand over.
 
 ## Method documents
 
@@ -43,6 +44,9 @@ Keep real material in a local encrypted folder or a controlled document system. 
 | [Expense attribution](docs/expense-attribution.md) | Separating bills that could belong to either property |
 | [Repairs, improvements and depreciation](docs/repairs-vs-capital.md) | Deductible now or capitalised; screening Div 43 and Div 40 eligibility |
 | [Substantiating work use](docs/substantiating-work-use.md) | Proving equipment work-use percentage and working-from-home hours |
+| [Back pay and lump sums in arrears](docs/lump-sum-arrears.md) | Remediation payments, Lump Sum E, establishing the accrual year, why the offset often fails |
+| [ETF and managed fund distributions](docs/managed-fund-distributions.md) | AMIT distributions, why "no trades" is not "no income", the statement timing trap |
+| [Private health insurance](docs/private-health-insurance.md) | Rebate tier reconciliation, benefit codes, claim codes across two returns |
 | [Handover checklist](docs/handover.md) | What to check before handing the file to an agent |
 
 ## Year rules
@@ -54,7 +58,7 @@ Keep real material in a local encrypted folder or a controlled document system. 
 | [Work expenses](rules/2025-26/work-expenses.md) | WFH fixed rate and both methods' record requirements, car |
 | [Rental](rules/2025-26/rental.md) | Gross reporting, insurance, borrowing expenses, recoupments, travel, levies |
 | [Depreciation](rules/2025-26/depreciation.md) | Div 43 dates and rates, TR 97/25, s40-27, pool thresholds, start time |
-| [Medicare and rates](rules/2025-26/medicare-and-rates.md) | Tax scale, levy, surcharge tiers, PAYG schedules, study loans |
+| [Medicare and rates](rules/2025-26/medicare-and-rates.md) | Tax scale, levy, surcharge and rebate tiers, rebate percentages, arrears offset threshold, PAYG schedules |
 
 ## Templates
 

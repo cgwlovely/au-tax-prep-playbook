@@ -48,6 +48,13 @@
 - [ ] Combined lines in the agent's summary have been split against the original invoices (repairs / depreciating assets / capital works).
 - [ ] Depreciation eligibility was screened by construction year before any quantity surveyor was engaged.
 - [ ] Items assessed and found to have no room are listed separately as **assessed and closed**, with the basis and the conditions for reopening.
+- [ ] The expected refund was modelled independently and agrees with the lodgment tool's figure; any gap is explained, not accepted.
+- [ ] Where the form applies an ownership percentage itself, full-property amounts were entered — the net result is not half what it should be.
+- [ ] Brokerage and investment accounts were checked for **distributions**, not only trades; a year with no trades is not a year with no income.
+- [ ] Every managed fund distribution is reported from an annual tax statement, with the foreign income tax offset claimed and the cost base adjustment archived.
+- [ ] Any back pay was identified as a lump sum in arrears where applicable, the accrual years reported, and the basis for that split recorded.
+- [ ] Interest paid by an employer on arrears is not also declared as investment interest.
+- [ ] Private health insurance: benefit codes match the two rebate periods, the tier was checked against combined income, and the claim codes on both spouses' returns are complementary.
 - [ ] Every rate or threshold used came from `rules/<year>/`, and no rule marked `needs-review` was relied on without opening its source.
 - [ ] No amount derived from the net-pay sanity check has been used as an income figure — actual gross and PAYG come from the income statement.
 - [ ] Every refund, reimbursement, insurance recovery and rebate has had its character determined (income / cost base / balancing adjustment), not defaulted.
