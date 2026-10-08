@@ -75,6 +75,12 @@ less: unpaid leave (hours × hourly rate)
 
 Where the assumptions hold, this has agreed with the solved figure to within about one percent — but treat the payslip as the answer and the solve as the thing being checked, not the reverse. The payslip also confirms two assumptions directly: the tax scale code (whether the threshold was claimed) and whether there is a study loan deduction line.
 
+### How well it actually performs
+
+Measured against income statements obtained later, the method has landed within a few tenths of a percent on each individual employer where the assumptions held — but it **under-counted total income**, because it treats all net receipts as one stream and silently absorbs small secondary employers into the main figure.
+
+That is the shape of the error to expect: good on the dominant employer, blind to the existence of additional ones. It is a completeness check that cannot check its own completeness, which is precisely why it never substitutes for the income statement.
+
 ### Two things to keep separate once the real figures arrive
 
 These both need **actual** gross and PAYG from the income statement. Neither can be derived from the solve above, which assumes the two are equal by construction.
@@ -121,6 +127,20 @@ Report at minimum with salary and other income, housing, food, transport, health
 ## Merchant identification and evidence matching
 
 Build a merchant alias dictionary from the raw descriptions first, then confirm using invoice date, amount, email recipient, order number and purpose. For utilities, insurance, council rates, levies and subscriptions, check the periods are complete; where a month is missing or an amount looks wrong, go back to the emailed bill or the relevant account.
+
+## Build an independent model of the result
+
+Whatever lodgment tool is used, compute the expected outcome yourself before looking at what the tool says:
+
+```text
+assessable income − deductions = taxable income
+tax on taxable income + levies + any clawbacks − offsets − amounts withheld
+  = refund or amount payable
+```
+
+Then compare. Agreement to within a few dollars means both the inputs and the tool's treatment of them are as you understood. A gap of hundreds means something is being treated differently from how you modelled it, and the gap itself localises the problem — a discrepancy close to half of a known deduction points at an apportionment being applied twice; one close to a known rebate points at a tier or claim code.
+
+This is the single cheapest check available. It costs one calculation and it catches the errors that no field-level validation can, because each field is individually valid.
 
 ## Output quality gates
 

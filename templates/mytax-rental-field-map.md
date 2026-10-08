@@ -2,7 +2,13 @@
 
 *English · [中文](zh/mytax-rental-field-map.md)*
 
-Copy into each new financial year and fill in cell by cell. Enter amounts at **your ownership share**; where the page asks for the full amount and a percentage separately, use the full-amount column.
+Copy into each new financial year and fill in cell by cell.
+
+> **Establish first whether the form wants your share or the full property amount.** Some lodgment flows ask for the whole property's figures and a separate ownership percentage, and apply the percentage themselves. Entering your already-halved share into that kind of form halves it twice.
+>
+> **The detection test:** the net rental result the form reports should equal your expected share. If it comes out at exactly half of that, the percentage has been applied to figures you had already apportioned. Fix it by entering the full-property amounts and leaving the percentage as it is.
+>
+> This error is silent — nothing is flagged, the arithmetic inside the form is internally consistent, and the only symptom is a deduction quietly worth half what it should be. Check the net figure against your own workbook every year.
 
 ## Property details
 
