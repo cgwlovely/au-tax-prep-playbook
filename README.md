@@ -47,6 +47,7 @@ Keep real material in a local encrypted folder or a controlled document system. 
 | [Back pay and lump sums in arrears](docs/lump-sum-arrears.md) | Remediation payments, Lump Sum E, establishing the accrual year, why the offset often fails |
 | [ETF and managed fund distributions](docs/managed-fund-distributions.md) | AMIT distributions, why "no trades" is not "no income", the statement timing trap |
 | [Private health insurance](docs/private-health-insurance.md) | Rebate tier reconciliation, benefit codes, claim codes across two returns |
+| [Superannuation as a tax instrument](docs/superannuation-levers.md) | Concessional arbitrage, carry-forward expiry, balance between spouses, occupational rating |
 | [Handover checklist](docs/handover.md) | What to check before handing the file to an agent |
 
 ## Year rules
@@ -59,6 +60,7 @@ Keep real material in a local encrypted folder or a controlled document system. 
 | [Rental](rules/2025-26/rental.md) | Gross reporting, insurance, borrowing expenses, recoupments, travel, levies |
 | [Depreciation](rules/2025-26/depreciation.md) | Div 43 dates and rates, TR 97/25, s40-27, pool thresholds, start time |
 | [Medicare and rates](rules/2025-26/medicare-and-rates.md) | Tax scale, levy, surcharge and rebate tiers, rebate percentages, arrears offset threshold, PAYG schedules |
+| [Superannuation (2026-27)](rules/2026-27/superannuation.md) | Contribution caps, carry-forward, transfer balance cap, large-balance surcharge, downsizer |
 
 ## Templates
 

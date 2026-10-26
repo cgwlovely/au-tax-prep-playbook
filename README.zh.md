@@ -41,6 +41,7 @@
 | [补发工资与欠薪一次性支付](docs/zh/lump-sum-arrears.md) | 补发款、Lump Sum E、如何确定归属年度、offset 为什么常常拿不到 |
 | [ETF 与基金分配](docs/zh/managed-fund-distributions.md) | AMIT 分配、「没交易≠没收入」、声明的时间陷阱 |
 | [私人健康保险](docs/zh/private-health-insurance.md) | 返还档位对账、benefit code、两份申报的 claim code |
+| [把 super 当作税务工具](docs/zh/superannuation-levers.md) | 供款套利、结转额度到期、夫妻余额分布、职业评级 |
 | [交接清单](docs/zh/handover.md) | 交给税务代理前的检查 |
 
 ### 年度规则
@@ -53,6 +54,7 @@
 | [出租房](rules/2025-26/rental.md) | 毛额申报、保险、借款费用、补偿赔付、差旅、物业费 |
 | [折旧](rules/2025-26/depreciation.md) | Div 43 日期与费率、TR 97/25、s40-27、低值池阈值、起算日 |
 | [Medicare 与税率](rules/2025-26/medicare-and-rates.md) | 税率表、Medicare、附加税与返还档位、返还比例、欠薪抵免门槛、PAYG 预扣表 |
+| [养老金（2026-27）](rules/2026-27/superannuation.md) | 供款上限、结转、转入上限、大额余额附加税、缩减住房供款 |
 
 ### 模板
 
