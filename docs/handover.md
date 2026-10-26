@@ -55,6 +55,9 @@
 - [ ] Any back pay was identified as a lump sum in arrears where applicable, the accrual years reported, and the basis for that split recorded.
 - [ ] Interest paid by an employer on arrears is not also declared as investment interest.
 - [ ] Private health insurance: benefit codes match the two rebate periods, the tier was checked against combined income, and the claim codes on both spouses' returns are complementary.
+- [ ] Any personal deductible super contribution has a notice of intent lodged with the fund and acknowledged **before** the return is lodged.
+- [ ] The accumulated unused concessional cap was read from the tax authority's own record, not estimated, and the expiry of the oldest tranche is noted.
+- [ ] Each insured super account's occupational rating has been checked — a rating of "default" means the premium is set by an assumption, not by the job.
 - [ ] Every rate or threshold used came from `rules/<year>/`, and no rule marked `needs-review` was relied on without opening its source.
 - [ ] No amount derived from the net-pay sanity check has been used as an income figure — actual gross and PAYG come from the income statement.
 - [ ] Every refund, reimbursement, insurance recovery and rebate has had its character determined (income / cost base / balancing adjustment), not defaulted.
